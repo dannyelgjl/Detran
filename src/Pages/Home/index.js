@@ -11,12 +11,25 @@ import {
   Image,
 } from "react-native";
 
-import { Feather } from "@expo/vector-icons";
+import {
+  Feather,
+  AntDesign,
+  Octicons,
+  FontAwesome,
+  FontAwesome5,
+  Ionicons,
+  MaterialIcons,
+} from "@expo/vector-icons/";
+
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function App({ navigation }) {
+export default function Home({ navigation }) {
   const Infor = () => {
     navigation.navigate("Infor");
+  };
+
+  const PontCNH = () => {
+    navigation.navigate("PontCNH");
   };
 
   const image = {
@@ -24,124 +37,194 @@ export default function App({ navigation }) {
       "https://abrilviagemeturismo.files.wordpress.com/2019/03/2018-scorecard-featured-image-layout-2000_1200.001.jpeg",
   };
 
-  const [gallery, setgallery] = useState([
-    {
-      image: {
-        uri:
-          "https://abrilviagemeturismo.files.wordpress.com/2019/03/2018-scorecard-featured-image-layout-2000_1200.001.jpeg",
-      },
-      title: "transito-1",
-      key: "1",
-    },
-
-    {
-      image: {
-        uri:
-          "https://conteudo.imguol.com.br/c/entretenimento/19/2020/01/09/9jan2020---transito-na-marginal-pinheiros-em-sao-paulo-1578583450150_v2_1920x1168.jpg",
-      },
-      title: "transito-2",
-      key: "2",
-    },
-
-    {
-      image: {
-        uri:
-          "https://www.jornalcontabil.com.br/wp-content/uploads/2019/05/vista-da-cidade-a-noite-com-transito-e-luz-de-trilha_1359-936.jpg",
-      },
-      title: "transito-3",
-      key: "3",
-    },
-
-    {
-      image: {
-        uri:
-          "https://www.goedert.com.br/wp-content/uploads/2019/07/adobestock_127887299_3000x1204.jpg",
-      },
-      title: "transito-4",
-      key: "4",
-    },
-  ]);
-
   return (
-    <View style={{ flexGrow: 1, height: "100%" }}>
-      <View>
-        <ImageBackground
-          source={image}
-          style={{ width: "100%", height: 270 }}
-          imageStyle={{ borderBottomRightRadius: 65 }}
-        >
-          <View style={styles.DarkOverlay}></View>
+    <View style={{ flex: 1, height: "100%", backgroundColor: "#215297" }}>
+      <View style={{ backgroundColor: "#215297" }}>
+        <View source={image} style={{ width: "100%", height: 80 }}>
           <View style={styles.searchContainer}>
-            <Text style={styles.UserGreet}>Detran-Go</Text>
-            <Text style={styles.userText}>
-              é simplesmente uma simulação de texto da indústria tipográfica
-            </Text>
+            <Text style={styles.UserGreet}>Detran-Pi</Text>
           </View>
 
-          <View>
-            <TextInput
-              style={styles.searchBox}
-              placeholder="Buscar..."
-              placeholderTextColor="#666"
-            ></TextInput>
-            <Feather
-              name="search"
-              size={22}
-              color="#666"
-              style={{ position: "absolute", top: 30, right: 60, opacity: 0.6 }}
-            />
-          </View>
           <Feather
             name="menu"
             size={22}
             color="#fff"
-            style={{ position: "absolute", top: 40, left: 16 }}
+            style={{ position: "absolute", top: 30, left: 16 }}
           />
 
           <Feather
             name="bell"
             size={22}
             color="#fff"
-            style={{ position: "absolute", top: 40, right: 30 }}
+            style={{ position: "absolute", top: 30, right: 30 }}
           />
-        </ImageBackground>
+        </View>
+        <View
+          style={{ width: "100%", height: 5, backgroundColor: "#F0DC00" }}
+        ></View>
       </View>
 
       <ScrollView>
         <View style={{ padding: 16 }}>
-          <Text style={{ fontSize: 22, fontWeight: "bold" }}>
-            TEXTO TEXTO TEXTO
+          <Text style={{ fontSize: 24, fontWeight: "bold", color: "white" }}>
+            Serviços
           </Text>
         </View>
-        <FlatList
-          horizontal={true}
-          data={gallery}
-          renderItem={({ item }) => {
-            return (
-              <View style={{ paddingVertical: 20, paddingLeft: 16 }}>
-                <TouchableOpacity onPress={Infor}>
-                  <Image
-                    source={item.image}
-                    style={{
-                      width: 150,
-                      marginRight: 8,
-                      height: 250,
-                      borderRadius: 10,
-                    }}
-                  />
-                  <View style={styles.ImageOverlay}></View>
-                  <Feather
-                    name="map-pin"
-                    size={16}
-                    color="white"
-                    style={styles.imageLocationIcon}
-                  />
-                  <Text style={styles.ImageText}>{item.title}</Text>
-                </TouchableOpacity>
+
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <View
+            flexDirection={"row"}
+            style={{ paddingVertical: 5, paddingLeft: 16, width: "100%" }}
+          >
+            <TouchableOpacity onPress={Infor}>
+              <View style={styles.styleCard}>
+                <AntDesign
+                  name="car"
+                  size={36}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <View style={styles.ImageOverlay}></View>
+                <Text style={styles.ImageText}>Taxas</Text>
               </View>
-            );
-          }}
-        />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={PontCNH}>
+              <View style={styles.styleCard}>
+                <Octicons
+                  name="clippy"
+                  size={36}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+
+                <View style={styles.ImageOverlay}></View>
+
+                <Text style={styles.ImageText}>Serviços</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={PontCNH}>
+              <View style={styles.styleCard}>
+                <AntDesign
+                  name="filetext1"
+                  size={36}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <View style={styles.ImageOverlay}></View>
+
+                <Text style={styles.ImageText}>2ºVia</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={Infor}>
+              <View style={styles.styleCard}>
+                <AntDesign
+                  name="carryout"
+                  size={36}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <View style={styles.ImageOverlay}></View>
+
+                <Text style={styles.ImageText}>2ºVia</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={PontCNH}>
+              <View style={styles.styleCard}>
+                <AntDesign
+                  name="idcard"
+                  size={36}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <View style={styles.ImageOverlay}></View>
+
+                <Text style={styles.ImageText}>2ºVia</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <View
+            flexDirection={"row"}
+            style={{ paddingVertical: 10, paddingLeft: 16 }}
+          >
+            <TouchableOpacity onPress={PontCNH}>
+              <View style={styles.styleCard}>
+                <AntDesign
+                  name="solution1"
+                  size={36}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <View style={styles.ImageOverlay}></View>
+
+                <Text style={styles.ImageText}>2ºVia</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={PontCNH}>
+              <View style={styles.styleCard}>
+                <FontAwesome
+                  name="road"
+                  size={36}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <View style={styles.ImageOverlay}></View>
+
+                <Text style={styles.ImageText}>2ºVia</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={PontCNH}>
+              <View style={styles.styleCard}>
+                <FontAwesome5
+                  name="traffic-light"
+                  size={36}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <View style={styles.ImageOverlay}></View>
+
+                <Text style={styles.ImageText}>2ºVia</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={Infor}>
+              <View style={styles.styleCard}>
+                <Ionicons
+                  name="logo-model-s"
+                  size={36}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <View style={styles.ImageOverlay}></View>
+
+                <Text style={styles.ImageText}>2ºVia</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={PontCNH}>
+              <View style={styles.styleCard}>
+                <MaterialIcons
+                  name="announcement"
+                  size={36}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <View style={styles.ImageOverlay}></View>
+
+                <Text style={styles.ImageText}>2ºVia</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+
         <View style={{ marginBottom: 60 }}>
           <View
             style={{
@@ -150,13 +233,11 @@ export default function App({ navigation }) {
               justifyContent: "space-between",
             }}
           >
-            <Text style={{ fontSize: 22, fontWeight: "bold" }}>
-              Todas infors
+            <Text style={{ fontSize: 22, fontWeight: "bold", color: "#fff" }}>
+              Notícias
             </Text>
-            <Text
-              style={{ fontSize: 14, fontWeight: "bold", color: "#ff6200" }}
-            >
-              Ver todos
+            <Text style={{ fontSize: 14, fontWeight: "bold", color: "#fff" }}>
+              Ver todas
             </Text>
           </View>
           <Image
@@ -217,24 +298,33 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
+  styleCard: {
+    width: 100,
+    marginRight: 8,
+    height: 100,
+    borderRadius: 15,
+    backgroundColor: "#6698C6",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
   DarkOverlay: {
     position: "absolute",
     top: 0,
     right: 0,
     left: 0,
-    height: 270,
+    height: 80,
     backgroundColor: "#000",
     opacity: 0.5,
-    borderBottomRightRadius: 65,
   },
 
   searchContainer: {
-    paddingTop: 100,
-    paddingLeft: 16,
+    paddingTop: 20,
+    paddingLeft: 50,
   },
 
   UserGreet: {
-    fontSize: 38,
+    fontSize: 32,
     fontWeight: "bold",
     color: "white",
   },
@@ -242,7 +332,7 @@ const styles = StyleSheet.create({
   userText: {
     fontSize: 16,
     fontWeight: "normal",
-    color: "white",
+    color: "black",
   },
   searchBox: {
     marginTop: 16,
@@ -255,28 +345,22 @@ const styles = StyleSheet.create({
   },
 
   ImageOverlay: {
-    width: 150,
-    height: 250,
+    width: 100,
+    height: 100,
     marginRight: 8,
-    borderRadius: 10,
+    borderRadius: 15,
     position: "absolute",
-    backgroundColor: "#000",
-    opacity: 0.2,
+    backgroundColor: "#215297",
+    opacity: 0.5,
   },
 
   imageLocationIcon: {
-    position: "absolute",
-    marginTop: 4,
-    left: 10,
-    bottom: 10,
+    zIndex: 1,
   },
 
   ImageText: {
-    position: "absolute",
     color: "white",
     marginTop: 4,
     fontSize: 14,
-    left: 30,
-    bottom: 10,
   },
 });
