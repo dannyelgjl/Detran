@@ -42,14 +42,15 @@ export function DrawerContent(props, navigation) {
               style={{ flexDirection: "row" }}
             >
               <View>
-                <AntDesign name="home" size={34} color="black" />
+                <AntDesign name="home" size={34} color="#6F6F6F" />
               </View>
               <Text
                 style={{
                   fontSize: 15,
                   fontWeight: "bold",
                   alignSelf: "flex-end",
-                  marginLeft: 7,
+                  marginLeft: 10,
+                  color: "#6F6F6F",
                 }}
               >
                 INÍCIO
@@ -57,6 +58,98 @@ export function DrawerContent(props, navigation) {
             </TouchableOpacity>
           </View>
           <View style={styles.lineBlackHrTest} />
+
+          <View
+            style={{
+              marginTop: 20,
+              marginLeft: 20,
+              width: "100%",
+            }}
+          >
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate("Taxas");
+              }}
+              style={{ flexDirection: "row" }}
+            >
+              <View>
+                <AntDesign name="carryout" size={34} color="#6F6F6F" />
+              </View>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: "bold",
+                  alignSelf: "flex-end",
+                  marginLeft: 10,
+                  color: "#6F6F6F",
+                }}
+              >
+                Taxas de Serviços
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.lineBlackHrTest} />
+
+          <View
+            style={{
+              marginTop: 20,
+              marginLeft: 20,
+              width: "100%",
+            }}
+          >
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate("Home");
+              }}
+              style={{ flexDirection: "row" }}
+            >
+              <View>
+                <AntDesign name="idcard" size={34} color="#6F6F6F" />
+              </View>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: "bold",
+                  alignSelf: "flex-end",
+                  marginLeft: 10,
+                  color: "#6F6F6F",
+                }}
+              >
+                Agendamento
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.lineBlackHrTest} />
+
+          <View
+            style={{
+              marginTop: 20,
+              marginLeft: 20,
+              width: "100%",
+            }}
+          >
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate("Home");
+              }}
+              style={{ flexDirection: "row" }}
+            >
+              <View>
+                <AntDesign name="car" size={34} color="#6F6F6F" />
+              </View>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: "bold",
+                  alignSelf: "flex-end",
+                  marginLeft: 10,
+                  color: "#6F6F6F",
+                }}
+              >
+                Veículos
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </DrawerContentScrollView>
     </View>
@@ -95,8 +188,8 @@ const styles = StyleSheet.create({
   lineBlackHrTest: {
     borderBottomColor: "#cccc",
     borderBottomWidth: StyleSheet.hairlineWidth,
-    alignSelf: "stretch",
-    width: "100%",
+    alignSelf: "center",
+    width: "90%",
     marginTop: 10,
   },
 });

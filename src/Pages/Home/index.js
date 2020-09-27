@@ -85,7 +85,7 @@ export default function Home({ navigation }) {
                   style={styles.imageLocationIcon}
                 />
                 <View style={styles.ImageOverlay}></View>
-                <Text style={styles.ImageText}>Taxas</Text>
+                <Text style={styles.ImageText}>Veículos</Text>
               </View>
             </TouchableOpacity>
 
@@ -100,7 +100,7 @@ export default function Home({ navigation }) {
 
                 <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>Serviços</Text>
+                <Text style={styles.ImageText}>Habilitação</Text>
               </View>
             </TouchableOpacity>
 
