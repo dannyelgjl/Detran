@@ -1,0 +1,102 @@
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+
+import {
+  DrawerContentScrollView,
+  DrawerItem,
+  Section,
+} from "@react-navigation/drawer";
+
+import { AntDesign } from "@expo/vector-icons";
+
+import detranLogo from "../../assets/logo/detranLogoo.png";
+
+export function DrawerContent(props, navigation) {
+  const PontCNH = () => {
+    navigation.navigate("PontCNH");
+  };
+
+  return (
+    <View style={{ flex: 1 }}>
+      <DrawerContentScrollView {...props}>
+        <View style={styles.drawerContent}>
+          <View style={styles.userInfoSection}>
+            <View>
+              <Image source={detranLogo} style={styles.detranLogo} />
+            </View>
+            <View style={styles.lineBlackHr} />
+          </View>
+
+          <View
+            style={{
+              marginTop: 20,
+              marginLeft: 20,
+              width: "100%",
+            }}
+          >
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate("Home");
+              }}
+              style={{ flexDirection: "row" }}
+            >
+              <View>
+                <AntDesign name="home" size={34} color="black" />
+              </View>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: "bold",
+                  alignSelf: "flex-end",
+                  marginLeft: 7,
+                }}
+              >
+                INÍCIO
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.lineBlackHrTest} />
+        </View>
+      </DrawerContentScrollView>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  drawerContent: {
+    flex: 1,
+  },
+
+  userInfoSection: {
+    paddingLeft: 20,
+  },
+
+  title: {
+    fontSize: 16,
+    marginTop: 3,
+    fontWeight: "bold",
+  },
+
+  detranLogo: {
+    marginTop: 30,
+    width: "70%",
+    height: 50,
+    alignSelf: "center",
+  },
+  lineBlackHr: {
+    borderBottomColor: "#000",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    alignSelf: "stretch",
+    width: "95%",
+    marginTop: 10,
+  },
+
+  lineBlackHrTest: {
+    borderBottomColor: "#cccc",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    alignSelf: "stretch",
+    width: "100%",
+    marginTop: 10,
+  },
+});

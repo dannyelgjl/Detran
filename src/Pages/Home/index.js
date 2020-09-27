@@ -49,7 +49,7 @@ export default function Home({ navigation }) {
             name="menu"
             size={22}
             color="#fff"
-            style={{ position: "absolute", top: 30, left: 16 }}
+            style={{ position: "absolute", top: 43, left: 16 }}
           />
 
           <Feather
@@ -327,6 +327,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "bold",
     color: "white",
+    marginTop: 10,
   },
 
   userText: {
