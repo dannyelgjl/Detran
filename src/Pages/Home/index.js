@@ -28,6 +28,10 @@ export default function Home({ navigation }) {
     navigation.navigate("Infor");
   };
 
+  const Veiculos = () => {
+    navigation.navigate("Veiculos");
+  };
+
   const openDrawer = () => {
     navigation.openDrawer();
   };
@@ -43,7 +47,7 @@ export default function Home({ navigation }) {
 
   return (
     <View style={{ flex: 1, height: "100%", backgroundColor: "#215297" }}>
-      <View style={{ backgroundColor: "#215297" }}>
+      <View>
         <View source={image} style={{ width: "100%", height: 80 }}>
           <View style={styles.searchContainer}>
             <Text style={styles.UserGreet}>Detran-Pi</Text>
@@ -88,7 +92,7 @@ export default function Home({ navigation }) {
             flexDirection={"row"}
             style={{ paddingVertical: 5, paddingLeft: 16, width: "100%" }}
           >
-            <TouchableOpacity onPress={Infor}>
+            <TouchableOpacity onPress={Veiculos}>
               <View style={styles.styleCard}>
                 <AntDesign
                   name="car"
@@ -101,7 +105,7 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={PontCNH}>
+            <TouchableOpacity onPress={Veiculos}>
               <View style={styles.styleCard}>
                 <Octicons
                   name="clippy"
