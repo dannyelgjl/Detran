@@ -28,6 +28,10 @@ export default function Home({ navigation }) {
     navigation.navigate("Infor");
   };
 
+  const openDrawer = () => {
+    navigation.openDrawer();
+  };
+
   const PontCNH = () => {
     navigation.navigate("PontCNH");
   };
@@ -45,12 +49,20 @@ export default function Home({ navigation }) {
             <Text style={styles.UserGreet}>Detran-Pi</Text>
           </View>
 
-          <Feather
-            name="menu"
-            size={22}
-            color="#fff"
-            style={{ position: "absolute", top: 43, left: 16 }}
-          />
+          <View
+            style={{
+              marginBottom: 30,
+              alignItems: "center",
+
+              position: "absolute",
+              top: 35,
+              left: 15,
+            }}
+          >
+            <TouchableOpacity onPress={openDrawer}>
+              <Feather name="menu" size={22} color="#fff" />
+            </TouchableOpacity>
+          </View>
 
           <Feather
             name="bell"
@@ -60,11 +72,11 @@ export default function Home({ navigation }) {
           />
         </View>
         <View
-          style={{ width: "100%", height: 5, backgroundColor: "#F0DC00" }}
+          style={{ width: "100%", height: 3, backgroundColor: "#F0DC00" }}
         ></View>
       </View>
 
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ padding: 16 }}>
           <Text style={{ fontSize: 24, fontWeight: "bold", color: "white" }}>
             Serviços
@@ -128,7 +140,7 @@ export default function Home({ navigation }) {
                 />
                 <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>2ºVia</Text>
+                <Text style={styles.ImageText}>Licenciamento</Text>
               </View>
             </TouchableOpacity>
 
@@ -142,7 +154,7 @@ export default function Home({ navigation }) {
                 />
                 <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>2ºVia</Text>
+                <Text style={styles.ImageText}>Consultar CNH</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -163,7 +175,7 @@ export default function Home({ navigation }) {
                 />
                 <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>2ºVia</Text>
+                <Text style={styles.ImageText}>Agendamento</Text>
               </View>
             </TouchableOpacity>
 
@@ -177,7 +189,7 @@ export default function Home({ navigation }) {
                 />
                 <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>2ºVia</Text>
+                <Text style={styles.ImageText}>Financeiro</Text>
               </View>
             </TouchableOpacity>
 
@@ -191,7 +203,7 @@ export default function Home({ navigation }) {
                 />
                 <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>2ºVia</Text>
+                <Text style={styles.ImageText}>Ajuda</Text>
               </View>
             </TouchableOpacity>
 
@@ -205,7 +217,7 @@ export default function Home({ navigation }) {
                 />
                 <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>2ºVia</Text>
+                <Text style={styles.ImageText}>Reclamações</Text>
               </View>
             </TouchableOpacity>
 
@@ -219,12 +231,20 @@ export default function Home({ navigation }) {
                 />
                 <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>2ºVia</Text>
+                <Text style={styles.ImageText}>Contatos</Text>
               </View>
             </TouchableOpacity>
           </View>
         </ScrollView>
 
+        <View
+          style={{
+            width: "100%",
+            height: 3,
+            backgroundColor: "#F0DC00",
+            marginTop: 20,
+          }}
+        ></View>
         <View style={{ marginBottom: 60 }}>
           <View
             style={{
@@ -324,7 +344,7 @@ const styles = StyleSheet.create({
   },
 
   UserGreet: {
-    fontSize: 32,
+    fontSize: 25,
     fontWeight: "bold",
     color: "white",
     marginTop: 10,

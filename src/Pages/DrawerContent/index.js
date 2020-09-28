@@ -1,6 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { NavigationContainer } from "@react-navigation/native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Button,
+} from "react-native";
+
+//import { useNavigation } from "@react-navigation/native";
 
 import {
   DrawerContentScrollView,
@@ -12,11 +23,9 @@ import { AntDesign } from "@expo/vector-icons";
 
 import detranLogo from "../../assets/logo/detranLogoo.png";
 
-export function DrawerContent(props, navigation) {
-  const PontCNH = () => {
-    navigation.navigate("PontCNH");
-  };
+const Drawer = createDrawerNavigator();
 
+export function DrawerContent(props) {
   return (
     <View style={{ flex: 1 }}>
       <DrawerContentScrollView {...props}>
