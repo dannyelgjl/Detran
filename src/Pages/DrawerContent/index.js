@@ -23,8 +23,6 @@ import { AntDesign } from "@expo/vector-icons";
 
 import detranLogo from "../../assets/logo/detranLogoo.png";
 
-const Drawer = createDrawerNavigator();
-
 export function DrawerContent(props) {
   return (
     <View style={{ flex: 1 }}>

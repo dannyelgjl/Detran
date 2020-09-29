@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Detran",
-    "slug": "Detran",
+    "name": "Detran-Pi",
+    "slug": "detran",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,11 +14,18 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true
-    },
+
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.detran.detranpi"
+    },
+    "android": {
+      "package": "com.detran.detran_pi",
+      "versionCode": 1
     }
   }
 }

@@ -23,6 +23,12 @@ import {
 
 import { TouchableOpacity } from "react-native-gesture-handler";
 
+import segundaVia from "../../assets/icons/2via.png";
+import habilitaçao from "../../assets/icons/habilitacao.png";
+import licenciamento from "../../assets/icons/licenciamento.png";
+import financeiro from "../../assets/icons/financeiro.png";
+import reclamações from "../../assets/icons/reclamacoes.png";
+
 export default function Home({ navigation }) {
   const Infor = () => {
     navigation.navigate("Infor");
@@ -64,7 +70,7 @@ export default function Home({ navigation }) {
             }}
           >
             <TouchableOpacity onPress={openDrawer}>
-              <Feather name="menu" size={22} color="#fff" />
+              <Feather name="menu" size={28} color="#fff" />
             </TouchableOpacity>
           </View>
 
@@ -94,8 +100,8 @@ export default function Home({ navigation }) {
           >
             <TouchableOpacity onPress={Veiculos}>
               <View style={styles.styleCard}>
-                <AntDesign
-                  name="car"
+                <Ionicons
+                  name="logo-model-s"
                   size={36}
                   color="white"
                   style={styles.imageLocationIcon}
@@ -105,14 +111,9 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={Veiculos}>
+            <TouchableOpacity onPress={() => {}}>
               <View style={styles.styleCard}>
-                <Octicons
-                  name="clippy"
-                  size={36}
-                  color="white"
-                  style={styles.imageLocationIcon}
-                />
+                <Image source={habilitaçao} style={styles.imageIcon} />
 
                 <View style={styles.ImageOverlay}></View>
 
@@ -120,35 +121,25 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={PontCNH}>
+            <TouchableOpacity onPress={() => {}}>
               <View style={styles.styleCard}>
-                <AntDesign
-                  name="filetext1"
-                  size={36}
-                  color="white"
-                  style={styles.imageLocationIcon}
-                />
+                <Image source={segundaVia} style={styles.imageIcon} />
                 <View style={styles.ImageOverlay}></View>
 
                 <Text style={styles.ImageText}>2ºVia</Text>
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={Infor}>
+            <TouchableOpacity onPress={() => {}}>
               <View style={styles.styleCard}>
-                <AntDesign
-                  name="carryout"
-                  size={36}
-                  color="white"
-                  style={styles.imageLocationIcon}
-                />
+                <Image source={licenciamento} style={styles.imageIcon} />
                 <View style={styles.ImageOverlay}></View>
 
                 <Text style={styles.ImageText}>Licenciamento</Text>
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={PontCNH}>
+            <TouchableOpacity onPress={() => {}}>
               <View style={styles.styleCard}>
                 <AntDesign
                   name="idcard"
@@ -169,7 +160,7 @@ export default function Home({ navigation }) {
             flexDirection={"row"}
             style={{ paddingVertical: 10, paddingLeft: 16 }}
           >
-            <TouchableOpacity onPress={PontCNH}>
+            <TouchableOpacity onPress={() => {}}>
               <View style={styles.styleCard}>
                 <AntDesign
                   name="solution1"
@@ -179,28 +170,37 @@ export default function Home({ navigation }) {
                 />
                 <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>Agendamento</Text>
+                <Text style={styles.ImageText}>Agendar Atendimento</Text>
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={PontCNH}>
+            <TouchableOpacity onPress={() => {}}>
               <View style={styles.styleCard}>
-                <FontAwesome
-                  name="road"
-                  size={36}
-                  color="white"
-                  style={styles.imageLocationIcon}
-                />
+                <Image source={financeiro} style={styles.imageIcon} />
                 <View style={styles.ImageOverlay}></View>
 
                 <Text style={styles.ImageText}>Financeiro</Text>
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={PontCNH}>
+            <TouchableOpacity onPress={() => {}}>
+              <View style={styles.styleCard}>
+                <AntDesign
+                  name="contacts"
+                  size={36}
+                  color="white"
+                  style={styles.imageLocationIcon}
+                />
+                <View style={styles.ImageOverlay}></View>
+
+                <Text style={styles.ImageText}>Contatos</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => {}}>
               <View style={styles.styleCard}>
                 <FontAwesome5
-                  name="traffic-light"
+                  name="hands-helping"
                   size={36}
                   color="white"
                   style={styles.imageLocationIcon}
@@ -211,31 +211,12 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={Infor}>
+            <TouchableOpacity onPress={() => {}}>
               <View style={styles.styleCard}>
-                <Ionicons
-                  name="logo-model-s"
-                  size={36}
-                  color="white"
-                  style={styles.imageLocationIcon}
-                />
+                <Image source={reclamações} style={styles.imageIcon} />
                 <View style={styles.ImageOverlay}></View>
 
                 <Text style={styles.ImageText}>Reclamações</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={PontCNH}>
-              <View style={styles.styleCard}>
-                <MaterialIcons
-                  name="announcement"
-                  size={36}
-                  color="white"
-                  style={styles.imageLocationIcon}
-                />
-                <View style={styles.ImageOverlay}></View>
-
-                <Text style={styles.ImageText}>Contatos</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -323,13 +304,19 @@ const styles = StyleSheet.create({
   },
 
   styleCard: {
-    width: 100,
+    width: 114,
     marginRight: 8,
     height: 100,
     borderRadius: 15,
     backgroundColor: "#6698C6",
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  imageIcon: {
+    width: 66,
+    height: 42,
+    zIndex: 1,
   },
 
   DarkOverlay: {
@@ -370,8 +357,8 @@ const styles = StyleSheet.create({
   },
 
   ImageOverlay: {
-    width: 100,
-    height: 100,
+    width: 109,
+    height: 95,
     marginRight: 8,
     borderRadius: 15,
     position: "absolute",
@@ -387,5 +374,6 @@ const styles = StyleSheet.create({
     color: "white",
     marginTop: 4,
     fontSize: 14,
+    textAlign: "center",
   },
 });
