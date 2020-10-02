@@ -9,7 +9,7 @@ import {
   CheckBox,
 } from "react-native";
 
-export default function Veiculos() {
+export default function Veiculos(props) {
   const [isSelected, setSelection] = useState(false);
 
   return (
@@ -73,7 +73,9 @@ export default function Veiculos() {
         </View>
 
         <TouchableOpacity
-          onPress={() => alert("Teste")}
+          onPress={() => {
+            props.navigation.navigate("Test");
+          }}
           style={{
             backgroundColor: "#215297",
             marginTop: 20,
