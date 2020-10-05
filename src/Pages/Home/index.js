@@ -34,8 +34,12 @@ export default function Home({ navigation }) {
     navigation.navigate("Infor");
   };
 
-  const Veiculos = () => {
-    navigation.navigate("Veiculos");
+  const EmitirBoleto = () => {
+    navigation.navigate("EmitirBoleto");
+  };
+
+  const TaxasDeCNH = () => {
+    navigation.navigate("TaxasDeCNH");
   };
 
   const openDrawer = () => {
@@ -98,7 +102,15 @@ export default function Home({ navigation }) {
             flexDirection={"row"}
             style={{ paddingVertical: 5, paddingLeft: 16, width: "100%" }}
           >
-            <TouchableOpacity onPress={Veiculos}>
+            <TouchableOpacity onPress={TaxasDeCNH}>
+              <View style={styles.styleCard}>
+                <Image source={habilitaçao} style={styles.imageIcon} />
+                <View style={styles.ImageOverlay}></View>
+                <Text style={styles.ImageText}>Habilitação</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => {}}>
               <View style={styles.styleCard}>
                 <Ionicons
                   name="logo-model-s"
@@ -106,18 +118,10 @@ export default function Home({ navigation }) {
                   color="white"
                   style={styles.imageLocationIcon}
                 />
+
                 <View style={styles.ImageOverlay}></View>
+
                 <Text style={styles.ImageText}>Veículos</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => {}}>
-              <View style={styles.styleCard}>
-                <Image source={habilitaçao} style={styles.imageIcon} />
-
-                <View style={styles.ImageOverlay}></View>
-
-                <Text style={styles.ImageText}>Habilitação</Text>
               </View>
             </TouchableOpacity>
 

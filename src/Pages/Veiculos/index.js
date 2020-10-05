@@ -15,7 +15,9 @@ export default function Veiculos(props) {
   return (
     <View style={{ flex: 1, backgroundColor: "#eeee" }}>
       <View style={{ backgroundColor: "#215297" }}>
-        <View style={{ paddingTop: 20, paddingLeft: 50 }}>
+        <View
+          style={{ height: 70, justifyContent: "center", alignItems: "center" }}
+        >
           <Text
             style={{
               fontSize: 25,
@@ -24,15 +26,13 @@ export default function Veiculos(props) {
               marginTop: 10,
             }}
           >
-            Veículos
+            CNH
           </Text>
         </View>
       </View>
-
       <View
         style={{ width: "100%", height: 3, backgroundColor: "#F0DC00" }}
       ></View>
-
       <View style={{ alignItems: "center" }}>
         <TextInput
           placeholder={"Nº Renavam"}

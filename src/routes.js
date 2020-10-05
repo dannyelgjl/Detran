@@ -9,7 +9,8 @@ import Infor from "./Pages/Infor";
 import PontCNH from "./Pages/PontCNH";
 import Taxas from "./Pages/Taxas";
 import Veiculos from "./Pages/Veiculos";
-import Test from "./Pages/Test";
+import EmitirBoleto from "./Pages/EmitirBoleto";
+import TaxasDeCNH from "./Pages/TaxasDeCNH";
 
 import DrawerRoutes from "./routes/Drawer.routes";
 
@@ -29,7 +30,8 @@ export default function Routes() {
         <Stack.Screen name="PontCNH" component={PontCNH} />
         <Stack.Screen name="Taxas" component={Taxas} />
         <Stack.Screen name="Veiculos" component={Veiculos} />
-        <Stack.Screen name="Test" component={Test} />
+        <Stack.Screen name="EmitirBoleto" component={EmitirBoleto} />
+        <Stack.Screen name="TaxasDeCNH" component={TaxasDeCNH} />
       </Stack.Navigator>
     </NavigationContainer>
   );
