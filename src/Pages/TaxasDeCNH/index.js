@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, FlatList } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 
 function TaxasDeCNH() {
   const [taxas, setTaxas] = useState([
@@ -151,7 +152,26 @@ function TaxasDeCNH() {
   ]);
 
   return (
-    <View>
+    <View style={{ flex: 1, backgroundColor: "#E9E9E9" }}>
+      <View style={{ backgroundColor: "#215297" }}>
+        <View
+          style={{ height: 70, justifyContent: "center", alignItems: "center" }}
+        >
+          <Text
+            style={{
+              fontSize: 25,
+              fontWeight: "bold",
+              color: "white",
+              marginTop: 10,
+            }}
+          >
+            Taxas da CNH
+          </Text>
+        </View>
+      </View>
+      <View
+        style={{ width: "100%", height: 3, backgroundColor: "#F0DC00" }}
+      ></View>
       <FlatList
         keyExtractor={(item) => item.codigo}
         data={taxas}
@@ -161,6 +181,7 @@ function TaxasDeCNH() {
               <Text>{item.codigo}</Text>
               <Text>{item.descricao}</Text>
               <Text>R${item.valorAtual}</Text>
+              <FontAwesome name="print" size={24} color="black" />
             </View>
           );
         }}
