@@ -211,6 +211,7 @@ function TaxasDeCNH({ navigation }) {
                 <Text
                   style={{
                     backgroundColor: "#3D903D",
+                    fontSize: 16,
                     borderRadius: 6,
                     color: "white",
                     width: 25,
@@ -231,7 +232,7 @@ function TaxasDeCNH({ navigation }) {
                   height: 150,
                   bottom: 75,
                   left: 90,
-                  marginLeft: 4,
+                  marginLeft: 10,
                   marginTop: 18,
                 }}
               >
