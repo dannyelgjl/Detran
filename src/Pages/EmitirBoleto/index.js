@@ -9,19 +9,13 @@ const EmitirBoleto = ({ navigation }) => {
     cpf: "",
   });
 
-  const Boleto = () => {
-    navigation.navigate("Boleto", url1);
+  const Boleto = (params) => {
+    navigation.navigate("Boleto", params);
   };
-
-  const [url1, setUrl1] = useState("");
 
   function Base64(b64) {
-    setUrl1("data:application/pdf;base64," + b64.replace("\n", ""));
+    return "data:application/pdf;base64," + b64.replace("\n", "");
   }
-
-  const pdf = {
-    uri: "data:application/pdf;base64,JVBERi0xLjcKJc...",
-  };
 
   const [request, setRequest] = useState({
     codServico: "",
@@ -42,11 +36,11 @@ const EmitirBoleto = ({ navigation }) => {
         cnh: form,
       })
       .then((response) => {
-        console.log(response.data);
-        Base64(response.data.arquivoBase64);
-        console.log(response.data.arquivoBase64);
+        const base64 = Base64(response.data.arquivoBase64);
+
         if (response.data.boletoCnh) {
           setRequest(response.data.boletoCnh);
+          Boleto(base64);
         } else {
           Alert.alert(response.headers.status);
         }
@@ -148,19 +142,6 @@ const EmitirBoleto = ({ navigation }) => {
           <Text style={{ color: "white", fontSize: 15 }}>Imprimir</Text>
         </TouchableOpacity>
       </View>
-
-      <TouchableOpacity onPress={Boleto}>
-        <Text>teste</Text>
-      </TouchableOpacity>
-      <Text>{request.codServico}</Text>
-      <Text>{request.codigoDeBarras}</Text>
-      <Text>{request.codigoDeBarrasComDigito}</Text>
-      <Text>{request.cpf}</Text>
-      <Text>{request.dataEmissao}</Text>
-      <Text>{request.dataVencimento}</Text>
-      <Text>{request.registroPgu}</Text>
-      <Text>{request.servico}</Text>
-      <Text>{request.valor}</Text>
     </View>
   );
 };
