@@ -248,9 +248,7 @@ export default function Home({ navigation }) {
               Notícias
             </Text>
 
-            <TouchableOpacity
-              onPress={Linking.openURL("http://www.detran.pi.gov.br/noticias/")}
-            >
+            <TouchableOpacity onPress={() => {}}>
               <Text style={{ fontSize: 14, fontWeight: "bold", color: "#fff" }}>
                 Ver todas
               </Text>
@@ -295,7 +293,6 @@ export default function Home({ navigation }) {
                 marginLeft: 16,
               }}
             >
-              {" "}
               Lorem Ipsum é simplesmente uma simulação de texto da indústria
               tipográfica e de impresso
             </Text>

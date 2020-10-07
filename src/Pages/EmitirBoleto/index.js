@@ -2,12 +2,26 @@ import React, { useState } from "react";
 import { View, TextInput, Text, Alert, TouchableOpacity } from "react-native";
 import api from "../../services/api";
 
-const EmitirBoleto = () => {
+const EmitirBoleto = ({ navigation }) => {
   const [form, setForm] = useState({
     code: "",
     register: "",
     cpf: "",
   });
+
+  const Boleto = () => {
+    navigation.navigate("Boleto", url1);
+  };
+
+  const [url1, setUrl1] = useState("");
+
+  function Base64(b64) {
+    setUrl1("data:application/pdf;base64," + b64.replace("\n", ""));
+  }
+
+  const pdf = {
+    uri: "data:application/pdf;base64,JVBERi0xLjcKJc...",
+  };
 
   const [request, setRequest] = useState({
     codServico: "",
@@ -19,6 +33,7 @@ const EmitirBoleto = () => {
     registroPgu: "",
     servico: "",
     valor: "",
+    arquivoBase64: "",
   });
 
   const submit = () => {
@@ -28,6 +43,8 @@ const EmitirBoleto = () => {
       })
       .then((response) => {
         console.log(response.data);
+        Base64(response.data.arquivoBase64);
+        console.log(response.data.arquivoBase64);
         if (response.data.boletoCnh) {
           setRequest(response.data.boletoCnh);
         } else {
@@ -114,6 +131,7 @@ const EmitirBoleto = () => {
           }}
           onChangeText={(event) => setForm({ ...form, register: event })}
         />
+
         <TouchableOpacity
           onPress={submit}
           style={{
@@ -131,6 +149,9 @@ const EmitirBoleto = () => {
         </TouchableOpacity>
       </View>
 
+      <TouchableOpacity onPress={Boleto}>
+        <Text>teste</Text>
+      </TouchableOpacity>
       <Text>{request.codServico}</Text>
       <Text>{request.codigoDeBarras}</Text>
       <Text>{request.codigoDeBarrasComDigito}</Text>

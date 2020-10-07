@@ -12,6 +12,7 @@ import Veiculos from "./Pages/Veiculos";
 import EmitirBoleto from "./Pages/EmitirBoleto";
 import TaxasDeCNH from "./Pages/TaxasDeCNH";
 import ServicosHabilitacao from "./Pages/ServicosHabilitacao";
+import Boleto from "./Pages/Boleto";
 
 import DrawerRoutes from "./routes/Drawer.routes";
 
@@ -33,6 +34,7 @@ export default function Routes() {
         <Stack.Screen name="Veiculos" component={Veiculos} />
         <Stack.Screen name="EmitirBoleto" component={EmitirBoleto} />
         <Stack.Screen name="TaxasDeCNH" component={TaxasDeCNH} />
+        <Stack.Screen name="Boleto" component={Boleto} />
         <Stack.Screen
           name="ServicosHabilitacao"
           component={ServicosHabilitacao}
