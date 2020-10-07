@@ -28,6 +28,7 @@ import habilitaçao from "../../assets/icons/habilitacao.png";
 import licenciamento from "../../assets/icons/licenciamento.png";
 import financeiro from "../../assets/icons/financeiro.png";
 import reclamações from "../../assets/icons/reclamacoes.png";
+import ServicosHabilitacao from "../ServicosHabilitacao";
 
 export default function Home({ navigation }) {
   const Infor = () => {
@@ -38,8 +39,8 @@ export default function Home({ navigation }) {
     navigation.navigate("EmitirBoleto");
   };
 
-  const TaxasDeCNH = () => {
-    navigation.navigate("TaxasDeCNH");
+  const ServicosHabilitacao = () => {
+    navigation.navigate("ServicosHabilitacao");
   };
 
   const openDrawer = () => {
@@ -102,7 +103,7 @@ export default function Home({ navigation }) {
             flexDirection={"row"}
             style={{ paddingVertical: 5, paddingLeft: 16, width: "100%" }}
           >
-            <TouchableOpacity onPress={TaxasDeCNH}>
+            <TouchableOpacity onPress={ServicosHabilitacao}>
               <View style={styles.styleCard}>
                 <Image source={habilitaçao} style={styles.imageIcon} />
                 <View style={styles.ImageOverlay}></View>

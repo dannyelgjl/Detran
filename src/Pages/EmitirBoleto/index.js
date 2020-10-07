@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  TextInput,
-  Button,
-  Text,
-  Alert,
-  TouchableOpacity,
-} from "react-native";
+import { View, TextInput, Text, Alert, TouchableOpacity } from "react-native";
 import api from "../../services/api";
 
 const EmitirBoleto = () => {
@@ -104,7 +97,7 @@ const EmitirBoleto = () => {
             fontSize: 16,
             zIndex: 2,
           }}
-          onChangeText={(event) => setForm({ ...form, cpf: event })}
+          onChangeText={(text) => setForm({ ...form, cpf: text })}
         />
         <TextInput
           placeholder="Número do registro..."

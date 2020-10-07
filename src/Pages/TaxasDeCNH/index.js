@@ -178,6 +178,7 @@ function TaxasDeCNH({ navigation }) {
       ></View>
 
       <FlatList
+        showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.codigo}
         data={taxas}
         renderItem={({ item }) => {
@@ -185,7 +186,7 @@ function TaxasDeCNH({ navigation }) {
             <View
               style={{
                 backgroundColor: "white",
-                marginTop: 10,
+                marginTop: 8,
                 marginLeft: 8,
                 width: "95%",
                 height: 180,
@@ -233,7 +234,7 @@ function TaxasDeCNH({ navigation }) {
                   bottom: 75,
                   left: 90,
                   marginLeft: 10,
-                  marginTop: 18,
+                  marginTop: 16,
                 }}
               >
                 <Text
@@ -242,7 +243,7 @@ function TaxasDeCNH({ navigation }) {
                     fontWeight: "bold",
                   }}
                 >
-                  Taxas
+                  Taxa
                 </Text>
                 <Text
                   style={{
@@ -259,11 +260,9 @@ function TaxasDeCNH({ navigation }) {
 
               <View
                 style={{
-                  marginRight: 15,
-
+                  marginRight: 20,
                   bottom: 224,
                   marginBottom: 30,
-
                   alignItems: "flex-end",
                 }}
               >
