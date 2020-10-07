@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
-function TaxasDeCNH() {
+function TaxasDeCNH({ navigation }) {
+  const EmitirBoleto = () => {
+    navigation.navigate("EmitirBoleto");
+  };
+
   const [taxas, setTaxas] = useState([
     {
       codigo: "56",
@@ -172,16 +176,122 @@ function TaxasDeCNH() {
       <View
         style={{ width: "100%", height: 3, backgroundColor: "#F0DC00" }}
       ></View>
+
       <FlatList
         keyExtractor={(item) => item.codigo}
         data={taxas}
         renderItem={({ item }) => {
           return (
-            <View>
-              <Text>{item.codigo}</Text>
-              <Text>{item.descricao}</Text>
-              <Text>R${item.valorAtual}</Text>
-              <FontAwesome name="print" size={24} color="black" />
+            <View
+              style={{
+                backgroundColor: "white",
+                marginTop: 10,
+                marginLeft: 8,
+                width: "95%",
+                height: 180,
+                borderRadius: 8,
+              }}
+            >
+              <View
+                style={{
+                  alignItems: "flex-start",
+                  marginLeft: 10,
+                  marginTop: 18,
+                }}
+              >
+                <Text
+                  style={{
+                    fontSize: 20,
+                    fontWeight: "bold",
+                    alignItems: "flex-start",
+                  }}
+                >
+                  Código
+                </Text>
+                <Text
+                  style={{
+                    backgroundColor: "#3D903D",
+                    borderRadius: 6,
+                    color: "white",
+                    width: 25,
+                    height: 22,
+                    textAlign: "center",
+                    left: 15,
+                    marginTop: 10,
+                  }}
+                >
+                  {item.codigo}
+                </Text>
+              </View>
+
+              <View
+                style={{
+                  alignItems: "center",
+                  width: 150,
+                  height: 150,
+                  bottom: 75,
+                  left: 90,
+                  marginLeft: 4,
+                  marginTop: 18,
+                }}
+              >
+                <Text
+                  style={{
+                    fontSize: 20,
+                    fontWeight: "bold",
+                  }}
+                >
+                  Taxas
+                </Text>
+                <Text
+                  style={{
+                    width: 150,
+                    height: 100,
+                    textAlign: "center",
+                    fontSize: 15,
+                    marginTop: 10,
+                  }}
+                >
+                  {item.descricao}
+                </Text>
+              </View>
+
+              <View
+                style={{
+                  marginRight: 15,
+
+                  bottom: 224,
+                  marginBottom: 30,
+
+                  alignItems: "flex-end",
+                }}
+              >
+                <Text
+                  style={{
+                    fontSize: 20,
+                    fontWeight: "bold",
+                    fontSize: 20,
+                  }}
+                >
+                  Valor
+                </Text>
+                <Text
+                  style={{ textAlign: "center", fontSize: 15, marginTop: 10 }}
+                >
+                  R$ {item.valorAtual}
+                </Text>
+                <TouchableOpacity onPress={EmitirBoleto}>
+                  <FontAwesome
+                    style={{
+                      marginTop: 50,
+                      marginRight: 10,
+                    }}
+                    name="print"
+                    size={38}
+                    color="#215297"
+                  />
+                </TouchableOpacity>
+              </View>
             </View>
           );
         }}

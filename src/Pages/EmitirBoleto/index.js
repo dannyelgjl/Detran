@@ -134,7 +134,7 @@ const EmitirBoleto = () => {
             justifyContent: "center",
           }}
         >
-          <Text style={{ color: "white", fontSize: 15 }}>Consultar</Text>
+          <Text style={{ color: "white", fontSize: 15 }}>Imprimir</Text>
         </TouchableOpacity>
       </View>
 
