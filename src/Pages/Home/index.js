@@ -9,6 +9,7 @@ import {
   ScrollView,
   FlatList,
   Image,
+  Linking,
 } from "react-native";
 
 import {
@@ -246,9 +247,14 @@ export default function Home({ navigation }) {
             <Text style={{ fontSize: 22, fontWeight: "bold", color: "#fff" }}>
               Notícias
             </Text>
-            <Text style={{ fontSize: 14, fontWeight: "bold", color: "#fff" }}>
-              Ver todas
-            </Text>
+
+            <TouchableOpacity
+              onPress={Linking.openURL("http://www.detran.pi.gov.br/noticias/")}
+            >
+              <Text style={{ fontSize: 14, fontWeight: "bold", color: "#fff" }}>
+                Ver todas
+              </Text>
+            </TouchableOpacity>
           </View>
           <Image
             source={image}
