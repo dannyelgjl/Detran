@@ -10,10 +10,19 @@ export default function ServicosHabilitacao({ navigation }) {
     navigation.navigate("TaxasDeCNH");
   };
 
+  const goBack = () => {
+    navigation.goBack();
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: "#E9E9E9" }}>
       <StatusBar style="light" />
-      <View style={{ backgroundColor: "#215297", height: 90 }}>
+      <View
+        style={{
+          backgroundColor: "#215297",
+          height: 90,
+        }}
+      >
         <View
           style={{ height: 70, justifyContent: "center", alignItems: "center" }}
         >
@@ -27,6 +36,18 @@ export default function ServicosHabilitacao({ navigation }) {
           >
             Habilitação
           </Text>
+        </View>
+
+        <View
+          style={{
+            position: "absolute",
+            top: 50,
+            left: 10,
+          }}
+        >
+          <TouchableOpacity onPress={goBack}>
+            <AntDesign name="arrowleft" size={30} color="white" />
+          </TouchableOpacity>
         </View>
       </View>
       <View

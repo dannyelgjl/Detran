@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, AntDesign } from "@expo/vector-icons";
 
 function TaxasDeCNH({ navigation }) {
   const EmitirBoleto = () => {
     navigation.navigate("EmitirBoleto");
+  };
+
+  const goBack = () => {
+    navigation.goBack();
   };
 
   const [taxas, setTaxas] = useState([
@@ -172,6 +176,17 @@ function TaxasDeCNH({ navigation }) {
           >
             Taxas da CNH
           </Text>
+        </View>
+        <View
+          style={{
+            position: "absolute",
+            top: 50,
+            left: 10,
+          }}
+        >
+          <TouchableOpacity onPress={goBack}>
+            <AntDesign name="arrowleft" size={30} color="white" />
+          </TouchableOpacity>
         </View>
       </View>
       <View

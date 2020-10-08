@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, TextInput, Text, Alert, TouchableOpacity } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 import api from "../../services/api";
 
 const EmitirBoleto = ({ navigation }) => {
@@ -15,6 +16,10 @@ const EmitirBoleto = ({ navigation }) => {
 
   const Boleto = (params) => {
     navigation.navigate("Boleto", params);
+  };
+
+  const goBack = () => {
+    navigation.goBack();
   };
 
   const [request, setRequest] = useState({
@@ -62,8 +67,19 @@ const EmitirBoleto = ({ navigation }) => {
               marginTop: 60,
             }}
           >
-            Taxas Teste
+            Emitir Boleto
           </Text>
+        </View>
+        <View
+          style={{
+            position: "absolute",
+            top: 50,
+            left: 10,
+          }}
+        >
+          <TouchableOpacity onPress={goBack}>
+            <AntDesign name="arrowleft" size={30} color="white" />
+          </TouchableOpacity>
         </View>
       </View>
       <View
