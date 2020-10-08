@@ -210,6 +210,7 @@ function TaxasDeCNH({ navigation }) {
                 width: "95%",
                 height: 180,
                 borderRadius: 8,
+                marginBottom: 10,
               }}
             >
               <View
