@@ -9,6 +9,7 @@ import {
   Image,
   TouchableOpacity,
   Button,
+  Alert,
 } from "react-native";
 
 //import { useNavigation } from "@react-navigation/native";
@@ -24,6 +25,10 @@ import { AntDesign, Ionicons } from "@expo/vector-icons";
 import detranLogo from "../../assets/logo/detranLogoo.png";
 
 export function DrawerContent(props) {
+  const SendoDesenvolvido = () => {
+    Alert.alert("Sendo desenvolvido o melhor para você, Detran-PI.");
+  };
+
   return (
     <View style={{ flex: 1 }}>
       <DrawerContentScrollView {...props}>
@@ -74,9 +79,7 @@ export function DrawerContent(props) {
             }}
           >
             <TouchableOpacity
-              onPress={() => {
-                props.navigation.navigate("Taxas");
-              }}
+              onPress={SendoDesenvolvido}
               style={{ flexDirection: "row" }}
             >
               <View>
@@ -105,9 +108,7 @@ export function DrawerContent(props) {
             }}
           >
             <TouchableOpacity
-              onPress={() => {
-                props.navigation.navigate("Home");
-              }}
+              onPress={SendoDesenvolvido}
               style={{ flexDirection: "row" }}
             >
               <View>
@@ -136,9 +137,7 @@ export function DrawerContent(props) {
             }}
           >
             <TouchableOpacity
-              onPress={() => {
-                props.navigation.navigate("Home");
-              }}
+              onPress={SendoDesenvolvido}
               style={{ flexDirection: "row" }}
             >
               <View>
