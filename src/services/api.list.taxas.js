@@ -24,22 +24,22 @@ const taxas = [
     descricao: "Reabilitação de Condutor (2 categorias)",
     valorAtual: "264.75",
   },
-  {
+  /*{
     codigo: "2",
     descricao: "Renovação de CNH",
     valorAtual: "183.56",
-  },
-  {
+  }, */
+  /* {
     codigo: "50",
     descricao: "Renovação de CNH - Condutor de outra UF",
     valorAtual: "183.56",
-  },
-  {
+  }, */
+  /* {
     codigo: "4",
     descricao: "Renovação com Mudança/Adição de Categoria",
     valorAtual: "211.80",
-  },
-  {
+  }, */
+  /*{
     codigo: "52",
     descricao: "Renovação com Mudança/Adição de Categoria (Outro Estado)",
     valorAtual: "211.80",
@@ -53,7 +53,7 @@ const taxas = [
     codigo: "53",
     descricao: "CNH PERMANENTE (Outro Estado)",
     valorAtual: "105.90",
-  },
+  }, */
   {
     codigo: "61",
     descricao: "Permissão Internacional para Dirigir (PID)",
@@ -64,11 +64,11 @@ const taxas = [
     descricao: "Alteração de Dados",
     valorAtual: "201.21",
   },
-  {
+  /*{
     codigo: "11",
     descricao: "Segunda Via de CNH",
     valorAtual: "88.25",
-  },
+  },*/
   {
     codigo: "10",
     descricao: "Desistência de Categoria",
@@ -84,16 +84,16 @@ const taxas = [
     descricao: "Devolução de CNH",
     valorAtual: "14.12",
   },
-  {
+  /*{
     codigo: "7",
     descricao: "Repetição do Exame",
     valorAtual: " 60.01",
-  },
-  {
+  }, */
+  /*{
     codigo: "5",
     descricao: "Certidão Negativa de CNH",
     valorAtual: "28.24",
-  },
+  },*/
   {
     codigo: "20",
     descricao: "Transferência de Processo",
@@ -104,11 +104,11 @@ const taxas = [
     descricao: "Cópia do Prontuário",
     valorAtual: "60.01",
   },
-  {
+  /*{
     codigo: "8",
     descricao: "Falta Injustificada",
     valorAtual: "45.89",
-  },
+  },*/
   {
     codigo: "13",
     descricao: "Licença p/ Aprend. de Dir. Veículo (LADV)",
