@@ -161,22 +161,25 @@ function TaxasDeCNH({ navigation }) {
 
   return (
     <View style={{ flex: 1, backgroundColor: "#E9E9E9" }}>
-      <View style={{ backgroundColor: "#215297", height: 90 }}>
-        <View
-          style={{ height: 70, justifyContent: "center", alignItems: "center" }}
+      <View
+        style={{
+          backgroundColor: "#215297",
+          height: 90,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Text
+          style={{
+            fontSize: 25,
+            fontWeight: "bold",
+            color: "white",
+            marginTop: 45,
+          }}
         >
-          <Text
-            style={{
-              fontSize: 25,
-              fontWeight: "bold",
-              color: "white",
-              marginTop: 10,
-              marginTop: 60,
-            }}
-          >
-            Taxas da CNH
-          </Text>
-        </View>
+          Taxas da CNH
+        </Text>
+
         <View
           style={{
             position: "absolute",

@@ -55,21 +55,26 @@ const EmitirBoleto = ({ navigation }) => {
 
   return (
     <View style={{ flex: 1, alignItems: "center", backgroundColor: "#E9E9E9" }}>
-      <View style={{ backgroundColor: "#215297", width: "100%", height: 90 }}>
-        <View
-          style={{ height: 70, justifyContent: "center", alignItems: "center" }}
+      <View
+        style={{
+          backgroundColor: "#215297",
+          width: "100%",
+          height: 90,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Text
+          style={{
+            fontSize: 25,
+            fontWeight: "bold",
+            color: "white",
+            marginTop: 45,
+          }}
         >
-          <Text
-            style={{
-              fontSize: 25,
-              fontWeight: "bold",
-              color: "white",
-              marginTop: 60,
-            }}
-          >
-            Emitir Boleto
-          </Text>
-        </View>
+          Emitir Boleto
+        </Text>
+
         <View
           style={{
             position: "absolute",

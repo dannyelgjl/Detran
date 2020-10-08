@@ -10,6 +10,7 @@ import {
   FlatList,
   Image,
   Linking,
+  Alert,
 } from "react-native";
 
 import {
@@ -50,6 +51,10 @@ export default function Home({ navigation }) {
 
   const PontCNH = () => {
     navigation.navigate("PontCNH");
+  };
+
+  const SendoDesenvolvido = () => {
+    Alert.alert("Sendo desenvolvido o melhor para você, Detran-PI.");
   };
 
   const image = {
@@ -111,7 +116,7 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={SendoDesenvolvido}>
               <View style={styles.styleCard}>
                 <Ionicons
                   name="logo-model-s"
@@ -126,7 +131,7 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={SendoDesenvolvido}>
               <View style={styles.styleCard}>
                 <Image source={segundaVia} style={styles.imageIcon} />
                 <View style={styles.ImageOverlay}></View>
@@ -135,7 +140,7 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={SendoDesenvolvido}>
               <View style={styles.styleCard}>
                 <Image source={licenciamento} style={styles.imageIcon} />
                 <View style={styles.ImageOverlay}></View>
@@ -144,7 +149,7 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={SendoDesenvolvido}>
               <View style={styles.styleCard}>
                 <AntDesign
                   name="idcard"
@@ -165,7 +170,7 @@ export default function Home({ navigation }) {
             flexDirection={"row"}
             style={{ paddingVertical: 10, paddingLeft: 16 }}
           >
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={SendoDesenvolvido}>
               <View style={styles.styleCard}>
                 <AntDesign
                   name="solution1"
@@ -179,7 +184,7 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={SendoDesenvolvido}>
               <View style={styles.styleCard}>
                 <Image source={financeiro} style={styles.imageIcon} />
                 <View style={styles.ImageOverlay}></View>
@@ -188,7 +193,7 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={SendoDesenvolvido}>
               <View style={styles.styleCard}>
                 <AntDesign
                   name="contacts"
@@ -202,7 +207,7 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={SendoDesenvolvido}>
               <View style={styles.styleCard}>
                 <FontAwesome5
                   name="hands-helping"
@@ -216,7 +221,7 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={SendoDesenvolvido}>
               <View style={styles.styleCard}>
                 <Image source={reclamações} style={styles.imageIcon} />
                 <View style={styles.ImageOverlay}></View>
@@ -247,7 +252,7 @@ export default function Home({ navigation }) {
               Notícias
             </Text>
 
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={SendoDesenvolvido}>
               <Text style={{ fontSize: 14, fontWeight: "bold", color: "#fff" }}>
                 Ver todas
               </Text>

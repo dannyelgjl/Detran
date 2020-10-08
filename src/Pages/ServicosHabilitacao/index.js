@@ -3,7 +3,7 @@ import React from "react";
 
 import { FontAwesome, FontAwesome5, AntDesign } from "@expo/vector-icons";
 
-import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
+import { View, Text, TouchableOpacity, Alert } from "react-native";
 
 export default function ServicosHabilitacao({ navigation }) {
   const TaxasDeCNH = () => {
@@ -14,6 +14,10 @@ export default function ServicosHabilitacao({ navigation }) {
     navigation.goBack();
   };
 
+  const SendoDesenvolvido = () => {
+    Alert.alert("Sendo desenvolvido o melhor para você, Detran-PI.");
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: "#E9E9E9" }}>
       <StatusBar style="light" />
@@ -21,22 +25,21 @@ export default function ServicosHabilitacao({ navigation }) {
         style={{
           backgroundColor: "#215297",
           height: 90,
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <View
-          style={{ height: 70, justifyContent: "center", alignItems: "center" }}
+        <Text
+          style={{
+            fontSize: 25,
+            fontWeight: "bold",
+            color: "white",
+            marginTop: 45,
+            zIndex: 2,
+          }}
         >
-          <Text
-            style={{
-              fontSize: 25,
-              fontWeight: "bold",
-              color: "white",
-              marginTop: 60,
-            }}
-          >
-            Habilitação
-          </Text>
-        </View>
+          Habilitação
+        </Text>
 
         <View
           style={{
@@ -91,7 +94,7 @@ export default function ServicosHabilitacao({ navigation }) {
         }}
       >
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={SendoDesenvolvido}
           style={{ flexDirection: "row", alignItems: "center" }}
         >
           <FontAwesome name="id-card-o" size={40} color="#215297" />
@@ -118,7 +121,7 @@ export default function ServicosHabilitacao({ navigation }) {
         }}
       >
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={SendoDesenvolvido}
           style={{ flexDirection: "row", alignItems: "center" }}
         >
           <FontAwesome5 name="address-card" size={40} color="#215297" />
@@ -145,7 +148,7 @@ export default function ServicosHabilitacao({ navigation }) {
         }}
       >
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={SendoDesenvolvido}
           style={{ flexDirection: "row", alignItems: "center" }}
         >
           <AntDesign name="reload1" size={40} color="#215297" />
