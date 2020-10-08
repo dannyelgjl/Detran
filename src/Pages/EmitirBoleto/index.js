@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { View, TextInput, Text, Alert, TouchableOpacity } from "react-native";
+import { useRoute } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
-
 import api from "../../services/api";
 
+//import taxas from "../../services/api.list.taxas";
+
 const EmitirBoleto = ({ navigation }) => {
+  const route = useRoute();
+  //const teste = navigation.getParam("taxas");
+
   const [form, setForm] = useState({
-    code: "",
+    code: route.params,
     register: "",
     cpf: "",
   });
@@ -114,6 +119,9 @@ const EmitirBoleto = ({ navigation }) => {
             fontSize: 16,
             zIndex: 2,
           }}
+          editable={false}
+          selectTextOnFocus={false}
+          value={form.code}
           onChangeText={(event) => setForm({ ...form, code: event })}
         />
 
