@@ -9,13 +9,13 @@ const EmitirBoleto = ({ navigation }) => {
     cpf: "",
   });
 
-  const Boleto = (params) => {
-    navigation.navigate("Boleto", params);
-  };
-
   function Base64(b64) {
     return "data:application/pdf;base64," + b64.replace("\n", "");
   }
+
+  const Boleto = (params) => {
+    navigation.navigate("Boleto", params);
+  };
 
   const [request, setRequest] = useState({
     codServico: "",
@@ -50,7 +50,7 @@ const EmitirBoleto = ({ navigation }) => {
 
   return (
     <View style={{ flex: 1, alignItems: "center", backgroundColor: "#E9E9E9" }}>
-      <View style={{ backgroundColor: "#215297", width: "100%" }}>
+      <View style={{ backgroundColor: "#215297", width: "100%", height: 90 }}>
         <View
           style={{ height: 70, justifyContent: "center", alignItems: "center" }}
         >
@@ -59,7 +59,7 @@ const EmitirBoleto = ({ navigation }) => {
               fontSize: 25,
               fontWeight: "bold",
               color: "white",
-              marginTop: 10,
+              marginTop: 60,
             }}
           >
             Taxas Teste

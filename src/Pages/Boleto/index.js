@@ -1,12 +1,12 @@
 import React from "react";
-import { View, TouchableOpacity, Text } from "react-native";
+import { View, TouchableOpacity, Text, Linking } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import PDFReader from "rn-pdf-reader-js";
 
 export default function Boleto() {
   const route = useRoute();
 
-  //  style={{ flex: 1 }} sou<WebView rce={{ uri: encodeURI(route.params) }} />
+  //  style={{ flex: 1 }} <WebView rce={{ uri: encodeURI(route.params) }} />
   return (
     <View style={{ flex: 1, position: "relative" }}>
       <PDFReader

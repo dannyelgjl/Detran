@@ -69,9 +69,8 @@ export default function Home({ navigation }) {
             style={{
               marginBottom: 30,
               alignItems: "center",
-
               position: "absolute",
-              top: 35,
+              top: 45,
               left: 15,
             }}
           >
@@ -84,7 +83,7 @@ export default function Home({ navigation }) {
             name="bell"
             size={22}
             color="#fff"
-            style={{ position: "absolute", top: 30, right: 30 }}
+            style={{ position: "absolute", top: 45, right: 30 }}
           />
         </View>
         <View
@@ -346,7 +345,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     color: "white",
-    marginTop: 10,
+    marginTop: 22,
   },
 
   userText: {

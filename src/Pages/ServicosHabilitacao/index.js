@@ -3,7 +3,7 @@ import React from "react";
 
 import { FontAwesome, FontAwesome5, AntDesign } from "@expo/vector-icons";
 
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, SafeAreaView } from "react-native";
 
 export default function ServicosHabilitacao({ navigation }) {
   const TaxasDeCNH = () => {
@@ -13,7 +13,7 @@ export default function ServicosHabilitacao({ navigation }) {
   return (
     <View style={{ flex: 1, backgroundColor: "#E9E9E9" }}>
       <StatusBar style="light" />
-      <View style={{ backgroundColor: "#215297" }}>
+      <View style={{ backgroundColor: "#215297", height: 90 }}>
         <View
           style={{ height: 70, justifyContent: "center", alignItems: "center" }}
         >
@@ -22,7 +22,7 @@ export default function ServicosHabilitacao({ navigation }) {
               fontSize: 25,
               fontWeight: "bold",
               color: "white",
-              marginTop: 10,
+              marginTop: 60,
             }}
           >
             Habilitação
@@ -50,7 +50,7 @@ export default function ServicosHabilitacao({ navigation }) {
           <Text
             style={{
               marginLeft: 8,
-              fontSize: 20,
+              fontSize: 18,
               fontWeight: "bold",
             }}
           >
@@ -77,7 +77,7 @@ export default function ServicosHabilitacao({ navigation }) {
           <Text
             style={{
               marginLeft: 8,
-              fontSize: 20,
+              fontSize: 18,
               fontWeight: "bold",
             }}
           >
@@ -104,7 +104,7 @@ export default function ServicosHabilitacao({ navigation }) {
           <Text
             style={{
               marginLeft: 8,
-              fontSize: 20,
+              fontSize: 18,
               fontWeight: "bold",
             }}
           >
@@ -131,7 +131,7 @@ export default function ServicosHabilitacao({ navigation }) {
           <Text
             style={{
               marginLeft: 8,
-              fontSize: 20,
+              fontSize: 18,
               fontWeight: "bold",
             }}
           >
