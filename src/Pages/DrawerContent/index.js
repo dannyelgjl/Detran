@@ -19,7 +19,7 @@ import {
   Section,
 } from "@react-navigation/drawer";
 
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 
 import detranLogo from "../../assets/logo/detranLogoo.png";
 
@@ -142,7 +142,7 @@ export function DrawerContent(props) {
               style={{ flexDirection: "row" }}
             >
               <View>
-                <AntDesign name="car" size={34} color="#6F6F6F" />
+                <Ionicons name="logo-model-s" size={34} color="#6F6F6F" />
               </View>
               <Text
                 style={{

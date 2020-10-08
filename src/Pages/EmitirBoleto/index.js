@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, TextInput, Text, Alert, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+
 import api from "../../services/api";
 
 const EmitirBoleto = ({ navigation }) => {
@@ -129,22 +130,7 @@ const EmitirBoleto = ({ navigation }) => {
             fontSize: 16,
             zIndex: 2,
           }}
-          onChangeText={(text) => setForm({ ...form, cpf: text })}
-        />
-        <TextInput
-          placeholder="Número do registro..."
-          style={{
-            width: "90%",
-            height: 44,
-            padding: 10,
-            borderBottomWidth: 0.5,
-            borderColor: "#E9E9E9",
-            marginTop: 5,
-            marginBottom: 20,
-            fontSize: 16,
-            zIndex: 2,
-          }}
-          onChangeText={(event) => setForm({ ...form, register: event })}
+          onChangeText={(event) => setForm({ ...form, cpf: event })}
         />
 
         <TouchableOpacity
