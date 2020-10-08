@@ -6,8 +6,8 @@ import PDFReader from "rn-pdf-reader-js";
 export default function Boleto({ navigation }) {
   const route = useRoute();
 
-  const goBack = () => {
-    navigation.goBack();
+  const backTaxasCNH = () => {
+    navigation.navigate("TaxasDeCNH");
   };
 
   //  style={{ flex: 1 }} <WebView rce={{ uri: encodeURI(route.params) }} />
@@ -21,7 +21,7 @@ export default function Boleto({ navigation }) {
         source={{ base64: route.params }}
       />
       <TouchableOpacity
-        onPress={goBack}
+        onPress={backTaxasCNH}
         style={{
           position: "absolute",
           bottom: 10,
