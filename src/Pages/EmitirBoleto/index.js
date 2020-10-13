@@ -101,15 +101,15 @@ const EmitirBoleto = ({ navigation }) => {
           alignItems: "center",
           justifyContent: "center",
           backgroundColor: "white",
-          width: "90%",
+          width: "98%",
           marginTop: 40,
           borderRadius: 6,
         }}
       >
         <TextInput
-          placeholder="Código do serviço..."
+         
           style={{
-            width: "90%",
+            width: "100%",
             height: 44,
             padding: 10,
             borderBottomWidth: 0.8,
@@ -118,6 +118,7 @@ const EmitirBoleto = ({ navigation }) => {
             marginBottom: 20,
             fontSize: 16,
             zIndex: 2,
+          
           }}
           editable={false}
           selectTextOnFocus={false}

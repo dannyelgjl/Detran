@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity, Text, Linking } from "react-native";
+import { View, TouchableOpacity, Text } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import PDFReader from "rn-pdf-reader-js";
 
