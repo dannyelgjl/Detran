@@ -6,22 +6,25 @@ import api from "../../services/api";
 
 //import taxas from "../../services/api.list.taxas";
 
-const EmitirBoleto = ({ navigation }) => {
+const EmitirBoleto = ({ navigation } ) => {
   const route = useRoute();
   //const teste = navigation.getParam("taxas");
 
   const [form, setForm] = useState({
-    code: route.params,
+    code: route.params.codigo,
     register: "",
+    descricao: route.params.descricao,
     cpf: "",
   });
+  
+  console.log(route.params)
 
   function Base64(b64) {
     return "data:application/pdf;base64," + b64.replace("\n", "");
   }
 
-  const Boleto = (params) => {
-    navigation.navigate("Boleto", params);
+  const Boleto = (params ) => {
+    navigation.navigate("Boleto", params );
   };
 
   const goBack = () => {
@@ -106,25 +109,27 @@ const EmitirBoleto = ({ navigation }) => {
           borderRadius: 6,
         }}
       >
+        
+
         <TextInput
          
-          style={{
-            width: "100%",
-            height: 44,
-            padding: 10,
-            borderBottomWidth: 0.8,
-            borderColor: "#E9E9E9",
-            marginTop: 20,
-            marginBottom: 20,
-            fontSize: 16,
-            zIndex: 2,
-          
-          }}
-          editable={false}
-          selectTextOnFocus={false}
-          value={form.code}
-          onChangeText={(event) => setForm({ ...form, code: event })}
-        />
+         style={{
+           width: "100%",
+           height: 44,
+           padding: 10,
+           borderBottomWidth: 0.8,
+           borderColor: "#E9E9E9",
+           marginTop: 20,
+           marginBottom: 20,
+           fontSize: 16,
+           zIndex: 2,
+         
+         }}
+         editable={false}
+         selectTextOnFocus={false}
+         value={form.descricao}
+         onChangeText={(event) => setForm({ ...form, descricao: event })}
+       />
 
         <TextInput
           placeholder="CPF..."
@@ -139,6 +144,7 @@ const EmitirBoleto = ({ navigation }) => {
             fontSize: 16,
             zIndex: 2,
           }}
+         
           onChangeText={(event) => setForm({ ...form, cpf: event })}
         />
 

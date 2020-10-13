@@ -153,7 +153,7 @@ function TaxasDeCNH({ navigation }) {
                 >
                   R$ {item.valorAtual}
                 </Text>
-                <TouchableOpacity onPress={() => EmitirBoleto(item.descricao)}>
+                <TouchableOpacity onPress={() => EmitirBoleto(item)}>
                   <FontAwesome
                     style={{
                       marginTop: 50,
