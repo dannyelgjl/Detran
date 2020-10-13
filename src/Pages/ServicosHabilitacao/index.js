@@ -42,7 +42,7 @@ export default function ServicosHabilitacao({ navigation }) {
         </View>
       </View>
       <View
-        style={globalStyle.iconArrowLeftGlobal}
+        style={globalStyle.lineYellowHeaderGlobal}
       ></View>
       <View
         style={styles.containerServiços}
