@@ -4,6 +4,9 @@ import { useRoute } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import api from "../../services/api";
 
+
+import globalStyle from '../../styles/globalStyle'
+import styles from "./styles";
 //import taxas from "../../services/api.list.taxas";
 
 const EmitirBoleto = ({ navigation } ) => {
@@ -65,66 +68,35 @@ const EmitirBoleto = ({ navigation } ) => {
   return (
     <View style={{ flex: 1, alignItems: "center", backgroundColor: "#E9E9E9" }}>
       <View
-        style={{
-          backgroundColor: "#215297",
-          width: "100%",
-          height: 90,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        style={globalStyle.headerGlobal}
       >
         <Text
-          style={{
-            fontSize: 25,
-            fontWeight: "bold",
-            color: "white",
-            marginTop: 45,
-          }}
+          style={globalStyle.textStylizationGlobal}
         >
           Emitir Boleto
         </Text>
 
         <View
-          style={{
-            position: "absolute",
-            top: 50,
-            left: 10,
-          }}
+          style={globalStyle.iconArrowLeftGlobal}
         >
           <TouchableOpacity onPress={goBack}>
             <AntDesign name="arrowleft" size={30} color="white" />
           </TouchableOpacity>
         </View>
       </View>
+
       <View
-        style={{ width: "100%", height: 3, backgroundColor: "#F0DC00" }}
+        style={globalStyle.lineYellowHeaderGlobal}
       ></View>
+
       <View
-        style={{
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "white",
-          width: "98%",
-          marginTop: 40,
-          borderRadius: 6,
-        }}
+        style={styles.containerForm}
       >
         
 
         <TextInput
          
-         style={{
-           width: "100%",
-           height: 44,
-           padding: 10,
-           borderBottomWidth: 0.8,
-           borderColor: "#E9E9E9",
-           marginTop: 20,
-           marginBottom: 20,
-           fontSize: 16,
-           zIndex: 2,
-         
-         }}
+         style={styles.textInputTaxas}
          editable={false}
          selectTextOnFocus={false}
          value={form.descricao}
@@ -133,35 +105,16 @@ const EmitirBoleto = ({ navigation } ) => {
 
         <TextInput
           placeholder="CPF..."
-          style={{
-            width: "90%",
-            height: 44,
-            padding: 10,
-            borderBottomWidth: 0.8,
-            borderColor: "#E9E9E9",
-            marginTop: 5,
-            marginBottom: 20,
-            fontSize: 16,
-            zIndex: 2,
-          }}
+          style={styles.textInputCPF}
          
           onChangeText={(event) => setForm({ ...form, cpf: event })}
         />
 
         <TouchableOpacity
           onPress={submit}
-          style={{
-            backgroundColor: "#215297",
-            marginTop: 10,
-            marginBottom: 15,
-            width: 140,
-            height: 38,
-            borderRadius: 8,
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          style={styles.buttonImprimir}
         >
-          <Text style={{ color: "white", fontSize: 15 }}>Imprimir</Text>
+          <Text style={styles.buttonText}>Imprimir</Text>
         </TouchableOpacity>
       </View>
     </View>

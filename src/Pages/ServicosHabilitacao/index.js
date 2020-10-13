@@ -5,6 +5,9 @@ import { FontAwesome, FontAwesome5, AntDesign } from "@expo/vector-icons";
 
 import { View, Text, TouchableOpacity, Alert } from "react-native";
 
+import styles from './styles'
+import globalStyle from '../../styles/globalStyle'
+
 export default function ServicosHabilitacao({ navigation }) {
   const TaxasDeCNH = () => {
     navigation.navigate("TaxasDeCNH");
@@ -22,31 +25,16 @@ export default function ServicosHabilitacao({ navigation }) {
     <View style={{ flex: 1, backgroundColor: "#E9E9E9" }}>
       <StatusBar style="light" />
       <View
-        style={{
-          backgroundColor: "#215297",
-          height: 90,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        style={globalStyle.headerGlobal}
       >
         <Text
-          style={{
-            fontSize: 25,
-            fontWeight: "bold",
-            color: "white",
-            marginTop: 45,
-            zIndex: 2,
-          }}
+          style={globalStyle.textStylizationGlobal}
         >
           Habilitação
         </Text>
 
         <View
-          style={{
-            position: "absolute",
-            top: 50,
-            left: 10,
-          }}
+          style={globalStyle.iconArrowLeftGlobal}
         >
           <TouchableOpacity onPress={goBack}>
             <AntDesign name="arrowleft" size={30} color="white" />
@@ -54,29 +42,18 @@ export default function ServicosHabilitacao({ navigation }) {
         </View>
       </View>
       <View
-        style={{ width: "100%", height: 3, backgroundColor: "#F0DC00" }}
+        style={globalStyle.iconArrowLeftGlobal}
       ></View>
       <View
-        style={{
-          marginTop: 20,
-          padding: 20,
-          backgroundColor: "white",
-          borderRadius: 8,
-          marginLeft: 8,
-          marginRight: 8,
-        }}
+        style={styles.containerServiços}
       >
         <TouchableOpacity
           onPress={TaxasDeCNH}
-          style={{ flexDirection: "row", alignItems: "center" }}
+          style={styles.directionItem}
         >
           <FontAwesome5 name="money-check-alt" size={40} color="#215297" />
           <Text
-            style={{
-              marginLeft: 8,
-              fontSize: 18,
-              fontWeight: "bold",
-            }}
+            style={styles.textServiço}
           >
             Taxas CNH - (Pessoa física)
           </Text>
@@ -84,26 +61,15 @@ export default function ServicosHabilitacao({ navigation }) {
       </View>
 
       <View
-        style={{
-          marginTop: 20,
-          padding: 20,
-          backgroundColor: "white",
-          borderRadius: 8,
-          marginLeft: 8,
-          marginRight: 8,
-        }}
+         style={styles.containerServiços}
       >
         <TouchableOpacity
           onPress={SendoDesenvolvido}
-          style={{ flexDirection: "row", alignItems: "center" }}
+          style={styles.directionItem}
         >
           <FontAwesome name="id-card-o" size={40} color="#215297" />
           <Text
-            style={{
-              marginLeft: 8,
-              fontSize: 18,
-              fontWeight: "bold",
-            }}
+            style={styles.textServiço}
           >
             Consultar CNH
           </Text>
@@ -111,26 +77,15 @@ export default function ServicosHabilitacao({ navigation }) {
       </View>
 
       <View
-        style={{
-          marginTop: 20,
-          padding: 20,
-          backgroundColor: "white",
-          borderRadius: 8,
-          marginLeft: 8,
-          marginRight: 8,
-        }}
+        style={styles.containerServiços}
       >
         <TouchableOpacity
           onPress={SendoDesenvolvido}
-          style={{ flexDirection: "row", alignItems: "center" }}
+          style={styles.directionItem}
         >
           <FontAwesome5 name="address-card" size={40} color="#215297" />
           <Text
-            style={{
-              marginLeft: 8,
-              fontSize: 18,
-              fontWeight: "bold",
-            }}
+            style={styles.textServiço}
           >
             Situação CNH
           </Text>
@@ -138,26 +93,15 @@ export default function ServicosHabilitacao({ navigation }) {
       </View>
 
       <View
-        style={{
-          marginTop: 20,
-          padding: 20,
-          backgroundColor: "white",
-          borderRadius: 8,
-          marginLeft: 8,
-          marginRight: 8,
-        }}
+        style={styles.containerServiços}
       >
         <TouchableOpacity
           onPress={SendoDesenvolvido}
-          style={{ flexDirection: "row", alignItems: "center" }}
+          style={styles.directionItem}
         >
           <AntDesign name="reload1" size={40} color="#215297" />
           <Text
-            style={{
-              marginLeft: 8,
-              fontSize: 18,
-              fontWeight: "bold",
-            }}
+            style={styles.textServiço}
           >
             Soliticar Renovação CNH
           </Text>

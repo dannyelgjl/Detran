@@ -3,6 +3,9 @@ import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { FontAwesome, AntDesign } from "@expo/vector-icons";
 import apiTaxas from "../../services/api.list.taxas";
 
+import styles from './styles'
+import globalStyle from '../../styles/globalStyle'
+
 function TaxasDeCNH({ navigation }) {
   const EmitirBoleto = (taxas) => {
     navigation.navigate("EmitirBoleto", taxas);
@@ -15,30 +18,16 @@ function TaxasDeCNH({ navigation }) {
   return (
     <View style={{ flex: 1, backgroundColor: "#E9E9E9" }}>
       <View
-        style={{
-          backgroundColor: "#215297",
-          height: 90,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        style={globalStyle.headerGlobal}
       >
         <Text
-          style={{
-            fontSize: 25,
-            fontWeight: "bold",
-            color: "white",
-            marginTop: 45,
-          }}
+          style={globalStyle.textStylizationGlobal}
         >
           Taxas da CNH
         </Text>
 
         <View
-          style={{
-            position: "absolute",
-            top: 50,
-            left: 10,
-          }}
+          style={globalStyle.iconArrowLeftGlobal}
         >
           <TouchableOpacity onPress={goBack}>
             <AntDesign name="arrowleft" size={30} color="white" />
@@ -46,7 +35,7 @@ function TaxasDeCNH({ navigation }) {
         </View>
       </View>
       <View
-        style={{ width: "100%", height: 3, backgroundColor: "#F0DC00" }}
+        style={globalStyle.lineYellowHeaderGlobal}
       ></View>
 
       <FlatList
@@ -56,100 +45,48 @@ function TaxasDeCNH({ navigation }) {
         renderItem={({ item }) => {
           return (
             <View
-              style={{
-                backgroundColor: "white",
-                marginTop: 8,
-                marginLeft: 8,
-                width: "95%",
-                height: 180,
-                borderRadius: 8,
-                marginBottom: 10,
-              }}
+              style={styles.containerFlatlist}
             >
               <View
-                style={{
-                  alignItems: "flex-start",
-                  marginLeft: 10,
-                  marginTop: 18,
-                }}
+                style={styles.codePosition}
               >
                 <Text
-                  style={{
-                    fontSize: 20,
-                    fontWeight: "bold",
-                    alignItems: "flex-start",
-                  }}
+                  style={styles.textCode}
                 >
                   Código
                 </Text>
                 <Text
-                  style={{
-                    backgroundColor: "#3D903D",
-                    fontSize: 16,
-                    borderRadius: 6,
-                    color: "white",
-                    width: 25,
-                    height: 22,
-                    textAlign: "center",
-                    left: 15,
-                    marginTop: 10,
-                  }}
+                  style={styles.backgroundTextCode}
                 >
                   {item.codigo}
                 </Text>
               </View>
 
               <View
-                style={{
-                  alignItems: "center",
-                  width: 150,
-                  height: 150,
-                  bottom: 75,
-                  left: 90,
-                  marginLeft: 10,
-                  marginTop: 16,
-                }}
+                style={styles.positionTaxa}
               >
                 <Text
-                  style={{
-                    fontSize: 20,
-                    fontWeight: "bold",
-                  }}
+                  style={styles.textTaxaTitle}
                 >
                   Taxa
                 </Text>
                 <Text
-                  style={{
-                    width: 150,
-                    height: 100,
-                    textAlign: "center",
-                    fontSize: 15,
-                    marginTop: 10,
-                  }}
+                  style={styles.textTaxa}
                 >
                   {item.descricao}
                 </Text>
               </View>
 
               <View
-                style={{
-                  marginRight: 20,
-                  bottom: 224,
-                  marginBottom: 30,
-                  alignItems: "flex-end",
-                }}
+                style={styles.valorPosition}
               >
                 <Text
-                  style={{
-                    fontSize: 20,
-                    fontWeight: "bold",
-                    fontSize: 20,
-                  }}
+                  style={styles.textTitleValor}
                 >
                   Valor
                 </Text>
                 <Text
-                  style={{ textAlign: "center", fontSize: 15, marginTop: 10 }}
+                  style={styles.textValor}
                 >
                   R$ {item.valorAtual}
                 </Text>

@@ -3,6 +3,10 @@ import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import PDFReader from "rn-pdf-reader-js";
 
+
+import styles from "./styles";
+
+
 export default function Boleto({ navigation }) {
   const route = useRoute();
 
@@ -31,16 +35,3 @@ export default function Boleto({ navigation }) {
 }
 
 
-const styles = StyleSheet.create({
-  buttonBoleto: {
-    position: "absolute",
-    bottom: 10,
-    left: 20,
-    backgroundColor: "#215297",
-    width: 80,
-    height: 30,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 6,
-  }
-})

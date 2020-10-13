@@ -24,6 +24,8 @@ import { AntDesign, Ionicons } from "@expo/vector-icons";
 
 import detranLogo from "../../assets/logo/detranLogoo.png";
 
+import styles from './styles'
+
 export function DrawerContent(props) {
   const SendoDesenvolvido = () => {
     Alert.alert("Sendo desenvolvido o melhor para você, Detran-PI.");
@@ -41,11 +43,7 @@ export function DrawerContent(props) {
           </View>
 
           <View
-            style={{
-              marginTop: 20,
-              marginLeft: 20,
-              width: "100%",
-            }}
+            style={styles.positionText}
           >
             <TouchableOpacity
               onPress={() => {
@@ -57,13 +55,7 @@ export function DrawerContent(props) {
                 <AntDesign name="home" size={34} color="#6F6F6F" />
               </View>
               <Text
-                style={{
-                  fontSize: 15,
-                  fontWeight: "bold",
-                  alignSelf: "flex-end",
-                  marginLeft: 10,
-                  color: "#6F6F6F",
-                }}
+             style={styles.textStyle}
               >
                 INÍCIO
               </Text>
@@ -72,11 +64,7 @@ export function DrawerContent(props) {
           <View style={styles.lineBlackHrTest} />
 
           <View
-            style={{
-              marginTop: 20,
-              marginLeft: 20,
-              width: "100%",
-            }}
+            style={styles.positionText}
           >
             <TouchableOpacity
               onPress={SendoDesenvolvido}
@@ -86,13 +74,7 @@ export function DrawerContent(props) {
                 <AntDesign name="carryout" size={34} color="#6F6F6F" />
               </View>
               <Text
-                style={{
-                  fontSize: 15,
-                  fontWeight: "bold",
-                  alignSelf: "flex-end",
-                  marginLeft: 10,
-                  color: "#6F6F6F",
-                }}
+              style={styles.textStyle}
               >
                 Taxas de Serviços
               </Text>
@@ -101,11 +83,7 @@ export function DrawerContent(props) {
           <View style={styles.lineBlackHrTest} />
 
           <View
-            style={{
-              marginTop: 20,
-              marginLeft: 20,
-              width: "100%",
-            }}
+            style={styles.positionText}
           >
             <TouchableOpacity
               onPress={SendoDesenvolvido}
@@ -115,13 +93,7 @@ export function DrawerContent(props) {
                 <AntDesign name="idcard" size={34} color="#6F6F6F" />
               </View>
               <Text
-                style={{
-                  fontSize: 15,
-                  fontWeight: "bold",
-                  alignSelf: "flex-end",
-                  marginLeft: 10,
-                  color: "#6F6F6F",
-                }}
+                style={styles.textStyle}
               >
                 Agendamento
               </Text>
@@ -130,11 +102,7 @@ export function DrawerContent(props) {
           <View style={styles.lineBlackHrTest} />
 
           <View
-            style={{
-              marginTop: 20,
-              marginLeft: 20,
-              width: "100%",
-            }}
+            style={styles.positionText}
           >
             <TouchableOpacity
               onPress={SendoDesenvolvido}
@@ -144,13 +112,7 @@ export function DrawerContent(props) {
                 <Ionicons name="logo-model-s" size={34} color="#6F6F6F" />
               </View>
               <Text
-                style={{
-                  fontSize: 15,
-                  fontWeight: "bold",
-                  alignSelf: "flex-end",
-                  marginLeft: 10,
-                  color: "#6F6F6F",
-                }}
+                style={styles.textStyle}
               >
                 Veículos
               </Text>
@@ -162,40 +124,4 @@ export function DrawerContent(props) {
   );
 }
 
-const styles = StyleSheet.create({
-  drawerContent: {
-    flex: 1,
-  },
 
-  userInfoSection: {
-    paddingLeft: 20,
-  },
-
-  title: {
-    fontSize: 16,
-    marginTop: 3,
-    fontWeight: "bold",
-  },
-
-  detranLogo: {
-    marginTop: 30,
-    width: "70%",
-    height: 50,
-    alignSelf: "center",
-  },
-  lineBlackHr: {
-    borderBottomColor: "#000",
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    alignSelf: "stretch",
-    width: "95%",
-    marginTop: 10,
-  },
-
-  lineBlackHrTest: {
-    borderBottomColor: "#cccc",
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    alignSelf: "center",
-    width: "90%",
-    marginTop: 10,
-  },
-});

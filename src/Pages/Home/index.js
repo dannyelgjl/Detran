@@ -32,6 +32,9 @@ import financeiro from "../../assets/icons/financeiro.png";
 import reclamações from "../../assets/icons/reclamacoes.png";
 import ServicosHabilitacao from "../ServicosHabilitacao";
 
+import styles from './styles'
+import globalStyle from '../../styles/globalStyle'
+
 export default function Home({ navigation }) {
   const Infor = () => {
     navigation.navigate("Infor");
@@ -71,13 +74,7 @@ export default function Home({ navigation }) {
           </View>
 
           <View
-            style={{
-              marginBottom: 30,
-              alignItems: "center",
-              position: "absolute",
-              top: 45,
-              left: 15,
-            }}
+            style={styles.openDrawerMenuIcon}
           >
             <TouchableOpacity onPress={openDrawer}>
               <Feather name="menu" size={28} color="#fff" />
@@ -91,14 +88,15 @@ export default function Home({ navigation }) {
             style={{ position: "absolute", top: 45, right: 30 }}
           />
         </View>
+        
         <View
-          style={{ width: "100%", height: 3, backgroundColor: "#F0DC00" }}
+          style={globalStyle.lineYellowHeaderGlobal}
         ></View>
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ padding: 16 }}>
-          <Text style={{ fontSize: 24, fontWeight: "bold", color: "white" }}>
+          <Text style={styles.titleServiços}>
             Serviços
           </Text>
         </View>
@@ -242,30 +240,21 @@ export default function Home({ navigation }) {
         ></View>
         <View style={{ marginBottom: 60 }}>
           <View
-            style={{
-              padding: 20,
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
+            style={styles.noticiasContainer}
           >
-            <Text style={{ fontSize: 22, fontWeight: "bold", color: "#fff" }}>
+            <Text style={styles.noticiasTextTitle}>
               Notícias
             </Text>
 
             <TouchableOpacity onPress={SendoDesenvolvido}>
-              <Text style={{ fontSize: 14, fontWeight: "bold", color: "#fff" }}>
+              <Text style={styles.vertodosTextNoticias}>
                 Ver todas
               </Text>
             </TouchableOpacity>
           </View>
           <Image
             source={image}
-            style={{
-              width: "92%",
-              height: 250,
-              borderRadius: 10,
-              alignSelf: "center",
-            }}
+            style={styles.imageNoticias}
           />
           <View style={{ position: "absolute", bottom: 0, padding: 16 }}>
             <View style={{ flexDirection: "row" }}>
@@ -307,85 +296,3 @@ export default function Home({ navigation }) {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  styleCard: {
-    width: 114,
-    marginRight: 8,
-    height: 100,
-    borderRadius: 15,
-    backgroundColor: "#6698C6",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  imageIcon: {
-    width: 66,
-    height: 42,
-    zIndex: 1,
-  },
-
-  DarkOverlay: {
-    position: "absolute",
-    top: 0,
-    right: 0,
-    left: 0,
-    height: 80,
-    backgroundColor: "#000",
-    opacity: 0.5,
-  },
-
-  searchContainer: {
-    paddingTop: 20,
-    paddingLeft: 50,
-  },
-
-  UserGreet: {
-    fontSize: 25,
-    fontWeight: "bold",
-    color: "white",
-    marginTop: 22,
-  },
-
-  userText: {
-    fontSize: 16,
-    fontWeight: "normal",
-    color: "black",
-  },
-  searchBox: {
-    marginTop: 16,
-    backgroundColor: "#fff",
-    paddingLeft: 24,
-    padding: 12,
-    borderTopRightRadius: 40,
-    borderBottomRightRadius: 40,
-    width: "90%",
-  },
-
-  ImageOverlay: {
-    width: 109,
-    height: 95,
-    marginRight: 8,
-    borderRadius: 15,
-    position: "absolute",
-    backgroundColor: "#215297",
-    opacity: 0.5,
-  },
-
-  imageLocationIcon: {
-    zIndex: 1,
-  },
-
-  ImageText: {
-    color: "white",
-    marginTop: 4,
-    fontSize: 14,
-    textAlign: "center",
-  },
-});
