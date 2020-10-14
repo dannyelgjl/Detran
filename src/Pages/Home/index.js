@@ -44,6 +44,10 @@ export default function Home({ navigation }) {
     navigation.navigate("EmitirBoleto");
   };
 
+  const Veiculos = () => {
+    navigation.navigate("Veiculos")
+  }
+
   const ServicosHabilitacao = () => {
     navigation.navigate("ServicosHabilitacao");
   };
@@ -114,7 +118,7 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={SendoDesenvolvido}>
+            <TouchableOpacity onPress={Veiculos}>
               <View style={styles.styleCard}>
                 <Ionicons
                   name="logo-model-s"

@@ -1,92 +1,110 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Button,
-  Alert,
-  TouchableOpacity,
-  CheckBox,
-} from "react-native";
+import { StatusBar } from "expo-status-bar";
+import React from "react";
 
-export default function Veiculos(props) {
-  const [isSelected, setSelection] = useState(false);
+import { FontAwesome, FontAwesome5, AntDesign } from "@expo/vector-icons";
+
+import { View, Text, TouchableOpacity, Alert } from "react-native";
+
+import styles from './styles'
+import globalStyle from '../../styles/globalStyle'
+
+export default function ServicosHabilitacao({ navigation }) {
+  const TaxasDeCNH = () => {
+    navigation.navigate("TaxasDeCNH");
+  };
+
+  const goBack = () => {
+    navigation.goBack();
+  };
+
+  const SendoDesenvolvido = () => {
+    Alert.alert("Sendo desenvolvido o melhor para você, Detran-PI.");
+  };
 
   return (
-    <View style={{ flex: 1, backgroundColor: "#eeee" }}>
-      <View style={{ backgroundColor: "#215297" }}>
-        <View
-          style={{ height: 70, justifyContent: "center", alignItems: "center" }}
+    <View style={{ flex: 1, backgroundColor: "#E9E9E9" }}>
+      <StatusBar style="light" />
+      <View
+        style={globalStyle.headerGlobal}
+      >
+        <Text
+          style={globalStyle.textStylizationGlobal}
         >
-          <Text
-            style={{
-              fontSize: 25,
-              fontWeight: "bold",
-              color: "white",
-              marginTop: 10,
-            }}
-          >
-            CNH
-          </Text>
+          Veículos
+        </Text>
+
+        <View
+          style={globalStyle.iconArrowLeftGlobal}
+        >
+          <TouchableOpacity onPress={goBack}>
+            <AntDesign name="arrowleft" size={30} color="white" />
+          </TouchableOpacity>
         </View>
       </View>
       <View
-        style={{ width: "100%", height: 3, backgroundColor: "#F0DC00" }}
+        style={globalStyle.lineYellowHeaderGlobal}
       ></View>
-      <View style={{ alignItems: "center" }}>
-        <TextInput
-          placeholder={"Nº Renavam"}
-          style={{
-            width: "90%",
-            height: 44,
-            padding: 10,
-            borderBottomWidth: 0.5,
-            borderColor: "black",
-            marginTop: 40,
-            marginBottom: 20,
-            fontSize: 18,
-          }}
-        />
-        <View
-          style={{
-            flexDirection: "row",
-            width: "100%",
-            alignItems: "center",
-          }}
-        >
-          <CheckBox
-            style={{
-              alignSelf: "flex-start",
-
-              marginLeft: 20,
-            }}
-            value={isSelected}
-            onValueChange={setSelection}
-          />
-          <Text
-            style={{
-              color: "#000",
-            }}
-          >
-            Salvar estes dados para outras consultas.
-          </Text>
-        </View>
-
+      <View
+        style={styles.containerServiços}
+      >
         <TouchableOpacity
-          onPress={() => {
-            props.navigation.navigate("Test");
-          }}
-          style={{
-            backgroundColor: "#215297",
-            marginTop: 20,
-            width: 140,
-            height: 38,
-            borderRadius: 8,
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          onPress={SendoDesenvolvido}
+          style={styles.directionItem}
         >
-          <Text style={{ fontSize: 15, color: "#fff" }}>Consultar</Text>
+          <FontAwesome5 name="money-check-alt" size={40} color="#215297" />
+          <Text
+            style={styles.textServiço}
+          >
+            Taxas Veículo - (Pessoa física)
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+      <View
+         style={styles.containerServiços}
+      >
+        <TouchableOpacity
+          onPress={SendoDesenvolvido}
+          style={styles.directionItem}
+        >
+          <FontAwesome name="id-card-o" size={40} color="#215297" />
+          <Text
+            style={styles.textServiço}
+          >
+            Consultar Veículo
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+      <View
+        style={styles.containerServiços}
+      >
+        <TouchableOpacity
+          onPress={SendoDesenvolvido}
+          style={styles.directionItem}
+        >
+          <FontAwesome5 name="address-card" size={40} color="#215297" />
+          <Text
+            style={styles.textServiço}
+          >
+            Situação Veículo
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+      <View
+        style={styles.containerServiços}
+      >
+        <TouchableOpacity
+          onPress={SendoDesenvolvido}
+          style={styles.directionItem}
+        >
+          <AntDesign name="reload1" size={40} color="#215297" />
+          <Text
+            style={styles.textServiço}
+          >
+            Soliticar Renovação Veículo
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
