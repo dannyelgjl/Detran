@@ -13,6 +13,10 @@ export default function ServicosHabilitacao({ navigation }) {
     navigation.navigate("TaxasDeCNH");
   };
 
+  const taxasVeiculos = () => {
+    navigation.navigate("TaxasDeVeiculos")
+  }
+
   const goBack = () => {
     navigation.goBack();
   };
@@ -48,7 +52,7 @@ export default function ServicosHabilitacao({ navigation }) {
         style={styles.containerServiços}
       >
         <TouchableOpacity
-          onPress={SendoDesenvolvido}
+          onPress={taxasVeiculos}
           style={styles.directionItem}
         >
           <FontAwesome5 name="money-check-alt" size={40} color="#215297" />

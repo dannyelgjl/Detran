@@ -7,7 +7,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import Home from "./Pages/Home";
 import Infor from "./Pages/Infor";
 import PontCNH from "./Pages/PontCNH";
-import Taxas from "./Pages/Taxas";
+import TaxasDeVeiculos from "./Pages/TaxasDeVeiculos";
 import Veiculos from "./Pages/Veiculos";
 import EmitirBoleto from "./Pages/EmitirBoleto";
 import TaxasDeCNH from "./Pages/TaxasDeCNH";
@@ -30,7 +30,7 @@ export default function Routes() {
         <Stack.Screen name="Home" component={DrawerRoutes} />
         <Stack.Screen name="Infor" component={Infor} />
         <Stack.Screen name="PontCNH" component={PontCNH} />
-        <Stack.Screen name="Taxas" component={Taxas} />
+        <Stack.Screen name="TaxasDeVeiculos" component={TaxasDeVeiculos} />
         <Stack.Screen name="Veiculos" component={Veiculos} />
         <Stack.Screen name="EmitirBoleto" component={EmitirBoleto} />
         <Stack.Screen name="TaxasDeCNH" component={TaxasDeCNH} />

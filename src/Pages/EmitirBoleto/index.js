@@ -12,6 +12,29 @@ import styles from "./styles";
 const EmitirBoleto = ({ navigation } ) => {
   const route = useRoute();
   //const teste = navigation.getParam("taxas");
+  
+  
+ /* const submit = useCallback(() =>{
+    
+      api
+        .post("impost/billet_cpf", {
+          cnh: form,
+        })
+        .then((response) => {
+          const base64 = Base64(response.data.arquivoBase64);
+  
+          if (response.data.boletoCnh) {
+            setRequest(response.data.boletoCnh);
+            Boleto(base64);
+          } else {
+            Alert.alert(response.headers.status);
+          }
+        })
+        .catch((error) => console.log(error));
+    
+  
+  }, []) */
+
 
   const [form, setForm] = useState({
     code: route.params.codigo,
