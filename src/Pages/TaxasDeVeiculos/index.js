@@ -5,11 +5,12 @@ import apiTaxasVeiculos from "../../services/api.list.taxas.veiculos";
 
 import styles from './styles'
 import globalStyle from '../../styles/globalStyle'
+import EmitirBoletoVeiculos from "../EmitirBoletosVeiculos";
 
 function TaxasDeCNH({ navigation }) {
-  /*const EmitirBoleto = (taxas) => {
-    navigation.navigate("EmitirBoleto", taxas);
-  }; */
+ const EmitirBoletoVeiculos = () => {
+    navigation.navigate("EmitirBoletoVeiculos");
+  };
 
   const goBack = () => {
     navigation.goBack();
@@ -91,7 +92,7 @@ function TaxasDeCNH({ navigation }) {
                 >
                   R$ {item.valorAtual}
                 </Text>
-                <TouchableOpacity onPress={() => {}}>
+                <TouchableOpacity onPress={EmitirBoletoVeiculos}>
                   <FontAwesome
                     style={{
                       marginTop: 50,
