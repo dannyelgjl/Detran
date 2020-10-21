@@ -2,6 +2,8 @@ import {StyleSheet} from 'react-native'
 
 
 const styles = StyleSheet.create({
+  //estilo global do Header
+  
   headerGlobal: {
     backgroundColor: "#215297",
     width: "100%",
