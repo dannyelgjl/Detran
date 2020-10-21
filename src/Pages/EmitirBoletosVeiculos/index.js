@@ -15,8 +15,9 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
   }
 
   const BoletoVeiculo = (params) => {
-    navigation.navigate("BoletoVeiculo", params);
+    navigation.navigate("BoletoVeiculos", params);
   }
+  console.log(route.boletoveiculo);
 
   const [formveiculo, setFormVeiculo] = useState({
     code: "22",
@@ -27,7 +28,7 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
     renavam: "1040467447"
   });
 
-  console.log(route.params);
+
 
   const [request, setRequest] = useState({
     codigoTaxa: "",
@@ -52,21 +53,16 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
     }).then((response) => {
       const base64 = Base64(response.data.arquivoBase64);
 
-      if (response.data) {
-        setRequest(response.data);
+      if (response.data.boletoVeiculo) {
+        setRequest(response.data.boletoVeiculo);
         BoletoVeiculo(base64);
 
       }else{
         Alert.alert(response.headers.status);
       }
     }).catch((error) => console.log(error));  
-  } 
-  
-
-
+  }   
  ;
-
-  
 
   return (
     <View style={{ flex: 1, alignItems: "center", backgroundColor: "#E9E9E9" }}>
