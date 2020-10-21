@@ -59,7 +59,7 @@ export default function ServicosHabilitacao({ navigation }) {
           <Text
             style={styles.textServiço}
           >
-            IPVA
+            Taxas
           </Text>
         </TouchableOpacity>
       </View>

@@ -72,7 +72,7 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
         <Text
           style={globalStyle.textStylizationGlobal}
         >
-          Emitir Boleto Veículos
+          Emitir Boleto
         </Text>
 
         <View

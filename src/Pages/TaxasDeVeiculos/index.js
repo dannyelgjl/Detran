@@ -24,7 +24,7 @@ function TaxasDeCNH({ navigation }) {
         <Text
           style={globalStyle.textStylizationGlobal}
         >
-          Taxas de Veículos Teste
+          Taxas de Veículos
         </Text>
 
         <View
