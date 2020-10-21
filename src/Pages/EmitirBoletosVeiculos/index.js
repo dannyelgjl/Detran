@@ -1,15 +1,23 @@
 import React, { useState } from "react";
-import { View, TextInput, Text, Alert, TouchableOpacity, ScrollView } from "react-native";
+import { View, TextInput, Text, Alert, TouchableOpacity } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import api from "../../services/api";
-
-
 import globalStyle from '../../styles/globalStyle'
 import styles from "./styles";
-//import taxas from "../../services/api.list.taxas";
 
-const EmitirBoleto = ({ navigation } ) => {
+
+const EmitirBoletoVeiculos = ({ navigation } ) => {
+  const route = useRoute();
+  
+  const goBack = () => {
+    navigation.goBack();
+  }
+
+  const BoletoVeiculo = (params) => {
+    navigation.navigate("BoletoVeiculo", params);
+  }
+
   const [formveiculo, setFormVeiculo] = useState({
     code: "22",
     license_plate: "QKQ3482",
@@ -18,6 +26,8 @@ const EmitirBoleto = ({ navigation } ) => {
     cnpj: "12201863000106",
     renavam: "1040467447"
   });
+
+  console.log(route.params);
 
   const [request, setRequest] = useState({
     codigoTaxa: "",
@@ -40,26 +50,25 @@ const EmitirBoleto = ({ navigation } ) => {
     api.post("impost/billet_vehicle", {
       vehicle: formveiculo,
     }).then((response) => {
-      console.log(formveiculo);
-      console.log(response.data.boletoVeiculo);
-      if (response.data.boletoVeiculo) {
-        setRequest(response.data.boletoVeiculo);
-      }else {
+      const base64 = Base64(response.data.arquivoBase64);
+
+      if (response.data) {
+        setRequest(response.data);
+        BoletoVeiculo(base64);
+
+      }else{
         Alert.alert(response.headers.status);
       }
     }).catch((error) => console.log(error));  
   } 
   
-  const route = useRoute();
 
-  const goBack = () => {
-    navigation.goBack();
-  };
+
+ ;
 
   
 
   return (
-    <ScrollView>
     <View style={{ flex: 1, alignItems: "center", backgroundColor: "#E9E9E9" }}>
       <View
         style={globalStyle.headerGlobal}
@@ -123,7 +132,7 @@ const EmitirBoleto = ({ navigation } ) => {
         />  
 
         <TextInput
-          placeholder="charenavamssi..."
+          placeholder="renavam..."
           style={styles.textInputCPF}
           value={formveiculo.renavam}
           onChangeText={(event) => setFormVeiculo({...formveiculo, renavam: event})}
@@ -135,42 +144,9 @@ const EmitirBoleto = ({ navigation } ) => {
         >
           <Text style={styles.buttonText}>Imprimir</Text>
         </TouchableOpacity>
-
-      
-        <Text>
-      {request.servico}
-        
-      </Text>
-      
-      <Text>
-      {request.codigoTaxa}
-      </Text>
-      <Text>
-      {request.chassi}
-      </Text>
-      
-      <Text>
-      {request.renavam}
-      </Text>
-
-      <Text>
-      {request.valor}
-      
-      </Text>
-
-      <Text>
-      {request.dataVencimento}
-      </Text>
-
-      <Text>
-      {request.cnpj}
-      </Text>
-
       </View>
-
     </View>
-    </ScrollView>
   );
 };
 
-export default EmitirBoleto;
+export default EmitirBoletoVeiculos;
