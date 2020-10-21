@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TextInput, Text, Alert, TouchableOpacity } from "react-native";
+import { View, TextInput, Text, Alert, TouchableOpacity, ScrollView } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import api from "../../services/api";
@@ -10,85 +10,56 @@ import styles from "./styles";
 //import taxas from "../../services/api.list.taxas";
 
 const EmitirBoleto = ({ navigation } ) => {
-  const route = useRoute();
-  //const teste = navigation.getParam("taxas");
-  
-  
- /* const submit = useCallback(() =>{
-    
-      api
-        .post("impost/billet_cpf", {
-          cnh: form,
-        })
-        .then((response) => {
-          const base64 = Base64(response.data.arquivoBase64);
-  
-          if (response.data.boletoCnh) {
-            setRequest(response.data.boletoCnh);
-            Boleto(base64);
-          } else {
-            Alert.alert(response.headers.status);
-          }
-        })
-        .catch((error) => console.log(error));
-    
-  
-  }, []) */
+  const [formveiculo, setFormVeiculo] = useState({
+    code: "22",
+    license_plate: "QKQ3482",
+    chassi: "9C2JC30707R219442",
+    acquisition_date: "2020-07-01",
+    cnpj: "12201863000106",
+    renavam: "1040467447"
+  });
 
+  const [request, setRequest] = useState({
+    codigoTaxa: "",
+    servico: "",
+    valor: "",
+    cnpj: "",
+    placa: "",
+    renavam: "",
+    chassi: "",
+    dataEmissao: "",
+    dataVencimento: "",
+    codigoDeBarras: "",
+  });
 
- /* const [form, setForm] = useState({
-    code: route.params.codigo,
-    register: "",
-    descricao: route.params.descricao,
-    cpf: "",
-  }); */
-  
-  // console.log(route.params)
-
- /* function Base64(b64) {
+  function Base64(b64) {
     return "data:application/pdf;base64," + b64.replace("\n", "");
-  } */
+  }
 
- /* const Boleto = (params ) => {
-    navigation.navigate("Boleto", params );
-  }; */
+  const submit = () => {
+    api.post("impost/billet_vehicle", {
+      vehicle: formveiculo,
+    }).then((response) => {
+      console.log(formveiculo);
+      console.log(response.data.boletoVeiculo);
+      if (response.data.boletoVeiculo) {
+        setRequest(response.data.boletoVeiculo);
+      }else {
+        Alert.alert(response.headers.status);
+      }
+    }).catch((error) => console.log(error));  
+  } 
+  
+  const route = useRoute();
 
   const goBack = () => {
     navigation.goBack();
   };
 
-  /* const [request, setRequest] = useState({
-    codServico: "",
-    codigoDeBarras: "",
-    codigoDeBarrasComDigito: "",
-    cpf: "",
-    dataEmissao: "",
-    dataVencimento: "",
-    registroPgu: "",
-    servico: "",
-    valor: "",
-    arquivoBase64: "",
-  }); */
-
-  /*const submit = () => {
-    api
-      .post("impost/billet_cpf", {
-        cnh: form,
-      })
-      .then((response) => {
-        const base64 = Base64(response.data.arquivoBase64);
-
-        if (response.data.boletoCnh) {
-          setRequest(response.data.boletoCnh);
-          Boleto(base64);
-        } else {
-          Alert.alert(response.headers.status);
-        }
-      })
-      .catch((error) => console.log(error));
-  }; */
+  
 
   return (
+    <ScrollView>
     <View style={{ flex: 1, alignItems: "center", backgroundColor: "#E9E9E9" }}>
       <View
         style={globalStyle.headerGlobal}
@@ -116,31 +87,89 @@ const EmitirBoleto = ({ navigation } ) => {
         style={styles.containerForm}
       >
         
-
         <TextInput
-         
-         style={styles.textInputTaxas}
-         editable={false}
-         selectTextOnFocus={false}
-         
-         onChangeText={() => {}}
-       />
-
-        <TextInput
-          placeholder="CPF..."
+          placeholder="Code..."
           style={styles.textInputCPF}
-         
-          onChangeText={() => {}}
+          value={formveiculo.code}
+          onChangeText={(event) => setFormVeiculo({ ...formveiculo, code: event })}
         />
 
+        <TextInput
+          placeholder="license_plate..."
+          style={styles.textInputCPF}
+          value={formveiculo.license_plate}
+          onChangeText={(event) => setFormVeiculo({...formveiculo, license_plate: event})}
+        />
+
+        <TextInput
+          placeholder="chassi..."
+          style={styles.textInputCPF}
+          value={formveiculo.chassi}
+          onChangeText={(event) => setFormVeiculo({...formveiculo, chassi: event})}
+        /> 
+
+        <TextInput
+          placeholder="acquisition_date..."
+          style={styles.textInputCPF}
+          value={formveiculo.acquisition_date}
+          onChangeText={(event) => setFormVeiculo({...formveiculo, acquisition_date: event})}
+        />
+
+        <TextInput
+          placeholder="cnpj..."
+          style={styles.textInputCPF}
+          value={formveiculo.cnpj}
+          onChangeText={(event) => setFormVeiculo({...formveiculo, cnpj: event})}
+        />  
+
+        <TextInput
+          placeholder="charenavamssi..."
+          style={styles.textInputCPF}
+          value={formveiculo.renavam}
+          onChangeText={(event) => setFormVeiculo({...formveiculo, renavam: event})}
+        />  
+
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={submit}
           style={styles.buttonImprimir}
         >
           <Text style={styles.buttonText}>Imprimir</Text>
         </TouchableOpacity>
+
+      
+        <Text>
+      {request.servico}
+        
+      </Text>
+      
+      <Text>
+      {request.codigoTaxa}
+      </Text>
+      <Text>
+      {request.chassi}
+      </Text>
+      
+      <Text>
+      {request.renavam}
+      </Text>
+
+      <Text>
+      {request.valor}
+      
+      </Text>
+
+      <Text>
+      {request.dataVencimento}
+      </Text>
+
+      <Text>
+      {request.cnpj}
+      </Text>
+
       </View>
+
     </View>
+    </ScrollView>
   );
 };
 
