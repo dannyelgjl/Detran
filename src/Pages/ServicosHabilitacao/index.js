@@ -13,6 +13,10 @@ export default function ServicosHabilitacao({ navigation }) {
     navigation.navigate("TaxasDeCNH");
   };
 
+  const ConsultarCNH = () => {
+    navigation.navigate("ConsultarCNH");
+  }
+
   const goBack = () => {
     navigation.goBack();
   };
@@ -64,7 +68,7 @@ export default function ServicosHabilitacao({ navigation }) {
          style={styles.containerServiços}
       >
         <TouchableOpacity
-          onPress={SendoDesenvolvido}
+          onPress={ConsultarCNH}
           style={styles.directionItem}
         >
           <FontAwesome name="id-card-o" size={40} color="#215297" />

@@ -15,6 +15,7 @@ import ServicosHabilitacao from "./Pages/ServicosHabilitacao";
 import Boleto from "./Pages/Boleto";
 import EmitirBoletoVeiculos from './Pages/EmitirBoletosVeiculos';
 import BoletoVeiculos from './Pages/BoletoVeiculo';
+import ConsultarCNH from './Pages/ConsultarCNH';
 
 import DrawerRoutes from "./routes/Drawer.routes";
 
@@ -43,6 +44,7 @@ export default function Routes() {
         />
         <Stack.Screen  name="EmitirBoletoVeiculos" component={EmitirBoletoVeiculos} />
         <Stack.Screen  name="BoletoVeiculos" component={BoletoVeiculos} />
+        <Stack.Screen  name="ConsultarCNH" component={ConsultarCNH} />
       </Stack.Navigator>
     </NavigationContainer>
   );
