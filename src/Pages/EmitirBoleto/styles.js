@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
 
   buttonImprimir: {
-    backgroundColor: "#215297",
+    backgroundColor: "#181818",
     marginTop: 10,
     marginBottom: 15,
     width: 140,

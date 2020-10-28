@@ -70,7 +70,7 @@ export default function Home({ navigation }) {
   };
 
   return (
-    <View style={{ flex: 1, height: "100%", backgroundColor: "#215297" }}>
+    <View style={{ flex: 1, height: "100%", backgroundColor: "#181818" }}>
       <View>
         <View source={image} style={{ width: "100%", height: 80 }}>
           <View style={styles.searchContainer}>

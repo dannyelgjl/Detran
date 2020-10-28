@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   //estilo global do Header
   
   headerGlobal: {
-    backgroundColor: "#215297",
+    backgroundColor: "#181818",
     width: "100%",
     height: 90,
     justifyContent: "center",
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   lineYellowHeaderGlobal: {
     width: "100%", 
     height: 3, 
-    backgroundColor: "#F0DC00"
+    backgroundColor: "#f2d902"
   }
 })
 

@@ -100,7 +100,7 @@ function TaxasDeCNH({ navigation }) {
                     }}
                     name="print"
                     size={38}
-                    color="#215297"
+                    color="#181818"
                   />
                 </TouchableOpacity>
               </View>

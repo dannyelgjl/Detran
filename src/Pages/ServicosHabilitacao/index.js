@@ -55,7 +55,7 @@ export default function ServicosHabilitacao({ navigation }) {
           onPress={TaxasDeCNH}
           style={styles.directionItem}
         >
-          <FontAwesome5 name="money-check-alt" size={40} color="#215297" />
+          <FontAwesome5 name="money-check-alt" size={40} color="#d0b100" />
           <Text
             style={styles.textServiço}
           >
@@ -71,7 +71,7 @@ export default function ServicosHabilitacao({ navigation }) {
           onPress={ConsultarCNH}
           style={styles.directionItem}
         >
-          <FontAwesome name="id-card-o" size={40} color="#215297" />
+          <FontAwesome name="id-card-o" size={40} color="#d0b100" />
           <Text
             style={styles.textServiço}
           >
@@ -87,7 +87,7 @@ export default function ServicosHabilitacao({ navigation }) {
           onPress={SendoDesenvolvido}
           style={styles.directionItem}
         >
-          <FontAwesome5 name="address-card" size={40} color="#215297" />
+          <FontAwesome5 name="address-card" size={40} color="#d0b100" />
           <Text
             style={styles.textServiço}
           >
@@ -103,7 +103,7 @@ export default function ServicosHabilitacao({ navigation }) {
           onPress={SendoDesenvolvido}
           style={styles.directionItem}
         >
-          <AntDesign name="reload1" size={40} color="#215297" />
+          <AntDesign name="reload1" size={40} color="#d0b100" />
           <Text
             style={styles.textServiço}
           >

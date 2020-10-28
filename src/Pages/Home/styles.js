@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
     height: 100,
     borderRadius: 15,
-    backgroundColor: "#6698C6",
+    backgroundColor: "#d0b100",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
     borderRadius: 15,
     position: "absolute",
-    backgroundColor: "#215297",
+    backgroundColor: "#2d2600",
     opacity: 0.5,
   },
 
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
 
   ImageText: {
-    color: "white",
+    color: "#fff",
     marginTop: 4,
     fontSize: 14,
     textAlign: "center",

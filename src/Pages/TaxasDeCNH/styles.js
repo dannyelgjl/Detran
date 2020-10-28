@@ -2,14 +2,16 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
  containerFlatlist: {
-  
     backgroundColor: "white",
     marginTop: 8,
     marginLeft: 8,
     width: "95%",
     height: 180,
-    borderRadius: 8,
+    borderRadius: 6,
     marginBottom: 10,
+    borderWidth: 0.4,
+    borderColor: "#777"
+
  },
 
  codePosition: {
