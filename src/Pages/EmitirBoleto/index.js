@@ -118,7 +118,6 @@ const EmitirBoleto = ({ navigation } ) => {
         
 
         <TextInput
-         
          style={styles.textInputTaxas}
          editable={false}
          selectTextOnFocus={false}
@@ -129,7 +128,6 @@ const EmitirBoleto = ({ navigation } ) => {
         <TextInput
           placeholder="CPF..."
           style={styles.textInputCPF}
-         
           onChangeText={(event) => setForm({ ...form, cpf: event })}
         />
 

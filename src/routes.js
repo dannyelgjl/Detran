@@ -10,7 +10,7 @@ import PontCNH from "./Pages/PontCNH";
 import TaxasDeVeiculos from "./Pages/TaxasDeVeiculos";
 import Veiculos from "./Pages/Veiculos";
 import EmitirBoleto from "./Pages/EmitirBoleto";
-import TaxasDeCNH from "./Pages/TaxasDeCNH";
+import TaxasDeCNHCpf from "./Pages/TaxasHabilitação/Cpf";
 import ServicosHabilitacao from "./Pages/ServicosHabilitacao";
 import Boleto from "./Pages/Boleto";
 import EmitirBoletoVeiculos from './Pages/EmitirBoletosVeiculos';
@@ -36,7 +36,7 @@ export default function Routes() {
         <Stack.Screen name="TaxasDeVeiculos" component={TaxasDeVeiculos} />
         <Stack.Screen name="Veiculos" component={Veiculos} />
         <Stack.Screen name="EmitirBoleto" component={EmitirBoleto} />
-        <Stack.Screen name="TaxasDeCNH" component={TaxasDeCNH} />
+        <Stack.Screen name="TaxasDeCNHCpf" component={TaxasDeCNHCpf} />
         <Stack.Screen name="Boleto" component={Boleto} />
         <Stack.Screen
           name="ServicosHabilitacao"

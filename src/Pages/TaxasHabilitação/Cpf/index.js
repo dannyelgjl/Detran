@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { FontAwesome, AntDesign } from "@expo/vector-icons";
-import apiTaxas from "../../services/api.list.taxas";
+import apiTaxas from "../../../services/api.list.taxas";
 
 import styles from './styles'
-import globalStyle from '../../styles/globalStyle'
+import globalStyle from '../../../styles/globalStyle'
 
 function TaxasDeCNH({ navigation }) {
   const EmitirBoleto = (taxas) => {

@@ -16,7 +16,7 @@ export default function ServicosHabilitacao({ navigation }) {
   }, []); 
 
   const TaxasDeCNH = useCallback(() => {
-    navigation.navigate("TaxasDeCNH");
+    navigation.navigate("TaxasDeCNHCpf");
     setModalVisible(!modalVisible);
   }, [modalVisible]);
 
