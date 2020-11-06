@@ -15,10 +15,17 @@ export default function ServicosHabilitacao({ navigation }) {
     setModalVisible(true);
   }, []); 
 
-  const TaxasDeCNH = useCallback(() => {
+  const taxasDeCnhCpf = useCallback(() => {
     navigation.navigate("TaxasDeCNHCpf");
     setModalVisible(!modalVisible);
   }, [modalVisible]);
+
+  const taxasDeCnhCnpj = useCallback(() => {
+    navigation.navigate("TaxasDeCNHCnpj");
+    setModalVisible(!modalVisible);
+  }, [modalVisible]);
+
+  
 
   const ConsultarCNH = () => {
     navigation.navigate("ConsultarCNH");
@@ -161,16 +168,14 @@ export default function ServicosHabilitacao({ navigation }) {
             <View style={styles1.containerButton}>
               <TouchableHighlight
                 style={{ ...styles1.openButton, backgroundColor: '#d0b100', marginRight: 20 }}
-                onPress={TaxasDeCNH}>
+                onPress={taxasDeCnhCpf}>
                 <Text style={styles1.textStyle}>Pessoa Fisíca</Text>
               </TouchableHighlight>
 
 
               <TouchableHighlight
                 style={{ ...styles1.openButton, backgroundColor: '#d0b100' }}
-                onPress={() => {
-                  setModalVisible(!modalVisible);
-                }}>
+                onPress={taxasDeCnhCnpj}>
                 <Text style={styles1.textStyle}>Pessoa Jurídica</Text>
               </TouchableHighlight>
             </View>

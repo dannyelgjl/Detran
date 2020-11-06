@@ -11,6 +11,7 @@ import TaxasDeVeiculos from "./Pages/TaxasDeVeiculos";
 import Veiculos from "./Pages/Veiculos";
 import EmitirBoleto from "./Pages/EmitirBoleto";
 import TaxasDeCNHCpf from "./Pages/TaxasHabilitação/Cpf";
+import TaxasDeCNHCnpj from "./Pages/TaxasHabilitação/Cnpj";
 import ServicosHabilitacao from "./Pages/ServicosHabilitacao";
 import Boleto from "./Pages/Boleto";
 import EmitirBoletoVeiculos from './Pages/EmitirBoletosVeiculos';
@@ -37,6 +38,7 @@ export default function Routes() {
         <Stack.Screen name="Veiculos" component={Veiculos} />
         <Stack.Screen name="EmitirBoleto" component={EmitirBoleto} />
         <Stack.Screen name="TaxasDeCNHCpf" component={TaxasDeCNHCpf} />
+        <Stack.Screen name="TaxasDeCNHCnpj" component={TaxasDeCNHCnpj} />
         <Stack.Screen name="Boleto" component={Boleto} />
         <Stack.Screen
           name="ServicosHabilitacao"
