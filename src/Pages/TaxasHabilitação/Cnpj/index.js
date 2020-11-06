@@ -7,9 +7,11 @@ import styles from './styles'
 import globalStyle from '../../../styles/globalStyle'
 
 function TaxasDeCNH({ navigation }) {
-  const EmitirBoleto = (taxas) => {
-    navigation.navigate("EmitirBoleto", taxas);
+  const emitirBoleto = (taxas) => {
+    navigation.navigate("EmitirBoletoCnhCnpj", taxas);
   };
+
+  console.log(apiTaxas);
 
   const goBack = () => {
     navigation.goBack();
@@ -23,7 +25,7 @@ function TaxasDeCNH({ navigation }) {
         <Text
           style={globalStyle.textStylizationGlobal}
         >
-          Taxas da CNH
+          Taxas da CNH Cnpj
         </Text>
 
         <View
@@ -90,7 +92,7 @@ function TaxasDeCNH({ navigation }) {
                 >
                   R$ {item.valorAtual}
                 </Text>
-                <TouchableOpacity onPress={() => EmitirBoleto(item)}>
+                <TouchableOpacity onPress={() => emitirBoleto()}>
                   <FontAwesome
                     style={{
                       marginTop: 50,

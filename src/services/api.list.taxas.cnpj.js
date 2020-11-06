@@ -1,4 +1,4 @@
-const taxas = [
+const taxasCnpj = [
   {
     codigo: 37,
     descricao: "Credenciamento de clínica (médico / psicológico",
@@ -64,3 +64,5 @@ const taxas = [
   }
 
 ];
+
+export default taxasCnpj;

@@ -1,4 +1,4 @@
-const taxas = [
+const taxasCpf = [
   {
     codigo: "56",
     descricao: "Permissão para Dirigir (A ou X) - Primeira Habilitação",
@@ -146,4 +146,4 @@ const taxas = [
   },
 ];
 
-export default taxas;
+export default taxasCpf;
