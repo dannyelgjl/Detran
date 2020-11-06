@@ -1,67 +1,52 @@
-import React, { useState } from "react";
-import { View, TextInput, Text, Alert, TouchableOpacity } from "react-native";
-import { useRoute } from "@react-navigation/native";
+import React, { useState, useCallback } from "react";
+import { View, TextInput, Text, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+
+import { useRoute } from "@react-navigation/native";
 import api from "../../services/api";
+
 import globalStyle from '../../styles/globalStyle'
 import styles from "./styles";
 
 
 const EmitirBoletoVeiculos = ({ navigation } ) => {
   const route = useRoute();
-  
-  const goBack = () => {
+  const { codigo, descricao } = route.params;
+
+  const [license_plate, setLicensePlate] = useState("ODZ0144");
+  const [chassi, setChassi] = useState("9C2JC30707R219442");
+  const [acquisition_date, setAcquisitionDate] = useState("2020-07-01");
+  const [cnpj, setCnpj] = useState("12201863000106");
+  const [renavam, setRenavam] = useState("464849594");
+
+  const goBack = useCallback(() => {
     navigation.goBack();
-  }
-
-  const BoletoVeiculo = (params) => {
+  }, []);
+  
+  const boletoVeiculoNavigation = useCallback((params) => {
     navigation.navigate("BoletoVeiculos", params);
-  }
-  console.log(route.boletoveiculo);
+  }, []);
 
-  const [formveiculo, setFormVeiculo] = useState({
-    code: "22",
-    license_plate: "QKQ3482",
-    chassi: "9C2JC30707R219442",
-    acquisition_date: "2020-07-01",
-    cnpj: "12201863000106",
-    renavam: "1040467447"
-  });
-
-
-
-  const [request, setRequest] = useState({
-    codigoTaxa: "",
-    servico: "",
-    valor: "",
-    cnpj: "",
-    placa: "",
-    renavam: "",
-    chassi: "",
-    dataEmissao: "",
-    dataVencimento: "",
-    codigoDeBarras: "",
-  });
-
-  function Base64(b64) {
+  const base64 = useCallback((b64) => {
     return "data:application/pdf;base64," + b64.replace("\n", "");
-  }
+  }, []);
 
-  const submit = () => {
-    api.post("impost/billet_vehicle", {
-      vehicle: formveiculo,
-    }).then((response) => {
-      const base64 = Base64(response.data.arquivoBase64);
+  const submit = useCallback(async () => {
+    const response = await api.post("impost/billet_vehicle", {
+      vehicle: {
+        code: codigo,
+        license_plate,
+        chassi,
+        acquisition_date,
+        cnpj,
+        renavam
+      },
+    });
+      const { arquivoBase64 } = response.data;
+      const hashBase64 = base64(arquivoBase64);
 
-      if (response.data.boletoVeiculo) {
-        setRequest(response.data.boletoVeiculo);
-        BoletoVeiculo(base64);
-
-      }else{
-        Alert.alert(response.headers.status);
-      }
-    }).catch((error) => console.log(error));  
-  }   
+      hashBase64 && boletoVeiculoNavigation(hashBase64);  
+  }, []);   
  ;
 
   return (
@@ -93,51 +78,31 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
       >
         
         <TextInput
-          placeholder="Code..."
           style={styles.textInputCPF}
-          value={formveiculo.code}
-          onChangeText={(event) => setFormVeiculo({ ...formveiculo, code: event })}
+          editable={false}
+          selectTextOnFocus={false}
+          value={descricao} 
         />
 
         <TextInput
           placeholder="license_plate..."
           style={styles.textInputCPF}
-          value={formveiculo.license_plate}
-          onChangeText={(event) => setFormVeiculo({...formveiculo, license_plate: event})}
+          value={license_plate}
+          onChangeText={setLicensePlate}
         />
-
-        <TextInput
-          placeholder="chassi..."
-          style={styles.textInputCPF}
-          value={formveiculo.chassi}
-          onChangeText={(event) => setFormVeiculo({...formveiculo, chassi: event})}
-        /> 
-
-        <TextInput
-          placeholder="acquisition_date..."
-          style={styles.textInputCPF}
-          value={formveiculo.acquisition_date}
-          onChangeText={(event) => setFormVeiculo({...formveiculo, acquisition_date: event})}
-        />
-
-        <TextInput
-          placeholder="cnpj..."
-          style={styles.textInputCPF}
-          value={formveiculo.cnpj}
-          onChangeText={(event) => setFormVeiculo({...formveiculo, cnpj: event})}
-        />  
 
         <TextInput
           placeholder="renavam..."
           style={styles.textInputCPF}
-          value={formveiculo.renavam}
-          onChangeText={(event) => setFormVeiculo({...formveiculo, renavam: event})}
+          value={renavam}
+          onChangeText={setRenavam}
         />  
 
         <TouchableOpacity
           onPress={submit}
           style={styles.buttonImprimir}
         >
+
           <Text style={styles.buttonText}>Imprimir</Text>
         </TouchableOpacity>
       </View>

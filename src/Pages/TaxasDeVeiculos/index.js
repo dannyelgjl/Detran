@@ -8,8 +8,8 @@ import globalStyle from '../../styles/globalStyle'
 import EmitirBoletoVeiculos from "../EmitirBoletosVeiculos";
 
 function TaxasDeCNH({ navigation }) {
- const EmitirBoletoVeiculos = () => {
-    navigation.navigate("EmitirBoletoVeiculos");
+ const EmitirBoletoVeiculos = (taxasVeiculos) => {
+    navigation.navigate("EmitirBoletoVeiculos", taxasVeiculos);
   };
 
   const goBack = () => {
@@ -92,7 +92,7 @@ function TaxasDeCNH({ navigation }) {
                 >
                   R$ {item.valorAtual}
                 </Text>
-                <TouchableOpacity onPress={EmitirBoletoVeiculos}>
+                <TouchableOpacity onPress={() => EmitirBoletoVeiculos(item)}>
                   <FontAwesome
                     style={{
                       marginTop: 50,
