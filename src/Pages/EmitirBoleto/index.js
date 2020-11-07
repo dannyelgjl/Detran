@@ -40,7 +40,7 @@ const EmitirBoleto = ({ navigation } ) => {
     code: route.params.codigo,
     register: "",
     descricao: route.params.descricao,
-    cpf: "",
+    cpf: "06383007386",
   });
   
   console.log(route.params)
@@ -115,8 +115,6 @@ const EmitirBoleto = ({ navigation } ) => {
       <View
         style={styles.containerForm}
       >
-        
-
         <TextInput
          style={styles.textInputTaxas}
          editable={false}
@@ -128,6 +126,7 @@ const EmitirBoleto = ({ navigation } ) => {
         <TextInput
           placeholder="CPF..."
           style={styles.textInputCPF}
+          value={form.cpf}
           onChangeText={(event) => setForm({ ...form, cpf: event })}
         />
 

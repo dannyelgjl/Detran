@@ -7,14 +7,13 @@ import PDFReader from "rn-pdf-reader-js";
 import styles from "./styles";
 
 
-export default function Boleto({ navigation }) {
+export default function BoletoVeiculos({ navigation }) {
   const route = useRoute();
 
   const backTaxasCNH = () => {
-    navigation.navigate("TaxasDeCNHCpf");
+    navigation.navigate("TaxasDeCNHCnpj");
   };
-
-  //  style={{ flex: 1 }} <WebView rce={{ uri: encodeURI(route.params) }} />
+  
   return (
     <View style={{ flex: 1, position: "relative" }}>
       <PDFReader
