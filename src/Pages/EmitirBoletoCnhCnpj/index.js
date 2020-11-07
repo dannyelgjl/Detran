@@ -11,16 +11,20 @@ import styles from "./styles";
 
 const EmitirBoletoVeiculos = ({ navigation } ) => {
   const route = useRoute();
-  
-  const [code, setCode] = useState("72");
+  const { codigo, descricao } = route.params;
+
+  console.log(route.params)
+
   const [cnpj, setCnpj] = useState("00000000000191");
+
+  console.log(cnpj);
 
   const goBack = useCallback(() => {
     navigation.goBack();
   }, []);
   
   const boletoVeiculoNavigation = useCallback((params) => {
-    navigation.navigate("BoletoVeiculos", params);
+    navigation.navigate("BoletoCnhCnpj", params);
   }, []);
 
   const base64 = useCallback((b64) => {
@@ -30,7 +34,7 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
   const submit = useCallback(async () => {
     const response = await api.post("impost/billet_cnpj", {
       cnpj: {
-        code,
+        code: codigo,
         cnpj
       },
     });
@@ -73,20 +77,15 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
           style={styles.textInputCPF}
           editable={false}
           selectTextOnFocus={false}
-          
+          value={descricao}
         />
 
         <TextInput
-          placeholder="license_plate..."
+          placeholder="Digite seu CNPJ..."
+          value={cnpj}
+          onTextChange={setCnpj}
           style={styles.textInputCPF}
-         
-        />
-
-        <TextInput
-          placeholder="renavam..."
-          style={styles.textInputCPF}
-          
-        />  
+        /> 
 
         <TouchableOpacity
           onPress={submit}
