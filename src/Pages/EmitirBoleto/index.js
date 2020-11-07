@@ -124,7 +124,7 @@ const EmitirBoleto = ({ navigation } ) => {
        />
 
         <TextInput
-          placeholder="CPF..."
+          placeholder="Digite aqui seu CPF..."
           style={styles.textInputCPF}
           value={form.cpf}
           onChangeText={(event) => setForm({ ...form, cpf: event })}
