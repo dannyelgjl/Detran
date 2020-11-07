@@ -13,7 +13,7 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
   const route = useRoute();
   const { codigo, descricao } = route.params;
 
-  console.log(route.params)
+  console.log(route.params);
 
   const [cnpj, setCnpj] = useState("00000000000191");
 

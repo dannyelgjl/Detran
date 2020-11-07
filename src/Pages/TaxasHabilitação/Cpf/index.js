@@ -23,7 +23,7 @@ function TaxasDeCNH({ navigation }) {
         <Text
           style={globalStyle.textStylizationGlobal}
         >
-          Taxas da CNH
+          Taxas da CNH - CPF
         </Text>
 
         <View

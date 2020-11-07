@@ -25,7 +25,7 @@ function TaxasDeCNH({ navigation }) {
         <Text
           style={globalStyle.textStylizationGlobal}
         >
-          Taxas da CNH Cnpj
+          Taxas da CNH - CNPJ
         </Text>
 
         <View
