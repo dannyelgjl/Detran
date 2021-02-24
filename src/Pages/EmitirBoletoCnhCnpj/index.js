@@ -15,7 +15,7 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
 
   console.log(route.params);
 
-  const [cnpj, setCnpj] = useState("00000000000191");
+  const [cnpj, setCnpj] = useState("54246051000127");
 
   console.log(cnpj);
 
@@ -32,13 +32,12 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
   }, []);
 
   const submit = useCallback(async () => {
-    const response = await api.post("impost/billet_cnpj", {
-      cnpj: {
-        code: codigo,
+    const response = await api.post("api/cnpj/ticket", {
+        codigoTaxa: codigo,
         cnpj
-      },
     });
       const { arquivoBase64 } = response.data;
+      console.log(arquivoBase64);
       const hashBase64 = base64(arquivoBase64);
 
       hashBase64 && boletoVeiculoNavigation(hashBase64);  

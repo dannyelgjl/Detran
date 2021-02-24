@@ -13,9 +13,9 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
   const route = useRoute();
   const { codigo, descricao } = route.params;
 
-  const [license_plate, setLicensePlate] = useState("ODZ0144");
+  const [placa, setPlaca] = useState("ODZ0144");
   const [chassi, setChassi] = useState("9C2JC30707R219442");
-  const [acquisition_date, setAcquisitionDate] = useState("2020-07-01");
+  const [dataAquisicao, setDataAquisicao] = useState("2020-07-01");
   const [cnpj, setCnpj] = useState("12201863000106");
   const [renavam, setRenavam] = useState("464849594");
 
@@ -32,15 +32,13 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
   }, []);
 
   const submit = useCallback(async () => {
-    const response = await api.post("impost/billet_vehicle", {
-      vehicle: {
-        code: codigo,
-        license_plate,
+    const response = await api.post("api/vehicle/ticket", {
+        codigoTaxa: codigo,
+        placa,
         chassi,
-        acquisition_date,
+        dataAquisicao,
         cnpj,
         renavam
-      },
     });
       const { arquivoBase64 } = response.data;
       const hashBase64 = base64(arquivoBase64);
@@ -85,10 +83,10 @@ const EmitirBoletoVeiculos = ({ navigation } ) => {
         />
 
         <TextInput
-          placeholder="license_plate..."
+          placeholder="Place"
           style={styles.textInputCPF}
-          value={license_plate}
-          onChangeText={setLicensePlate}
+          value={placa}
+          onChangeText={setPlaca}
         />
 
         <TextInput

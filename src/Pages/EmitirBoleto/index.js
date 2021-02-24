@@ -37,7 +37,7 @@ const EmitirBoleto = ({ navigation } ) => {
 
 
   const [form, setForm] = useState({
-    code: route.params.codigo,
+    codigoTaxa: route.params.codigo,
     register: "",
     descricao: route.params.descricao,
     cpf: "06383007386",
@@ -72,9 +72,7 @@ const EmitirBoleto = ({ navigation } ) => {
 
   const submit = () => {
     api
-      .post("impost/billet_cpf", {
-        cnh: form,
-      })
+      .post("api/cnh/ticket", form)
       .then((response) => {
         const base64 = Base64(response.data.arquivoBase64);
 

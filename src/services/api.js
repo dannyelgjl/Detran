@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://api.detranpi.brasiltecnologia.net.br/api/detran/totem/v1/",
+  baseURL: "http://191.252.218.130/",
 });
 
 export default api;
