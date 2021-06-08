@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -36,6 +35,8 @@ import styles from './styles'
 import globalStyle from '../../styles/globalStyle'
 
 export default function Home({ navigation }) {
+  const [isShow, setIsShow] = useState(false);
+
   const Infor = () => {
     navigation.navigate("Infor");
   };
@@ -133,106 +134,112 @@ export default function Home({ navigation }) {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={SendoDesenvolvido}>
-              <View style={styles.styleCard}>
-                <Image source={segundaVia} style={styles.imageIcon} />
-                <View style={styles.ImageOverlay}></View>
-
-                <Text style={styles.ImageText}>2ºVia</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={SendoDesenvolvido}>
-              <View style={styles.styleCard}>
-                <Image source={licenciamento} style={styles.imageIcon} />
-                <View style={styles.ImageOverlay}></View>
-
-                <Text style={styles.ImageText}>Licenciamento</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={SendoDesenvolvido}>
-              <View style={styles.styleCard}>
-                <AntDesign
-                  name="idcard"
-                  size={36}
-                  color="white"
-                  style={styles.imageLocationIcon}
-                />
-                <View style={styles.ImageOverlay}></View>
-
-                <Text style={styles.ImageText}>Consultar CNH</Text>
-              </View>
-            </TouchableOpacity>
+            {isShow && (
+              <>
+                <TouchableOpacity onPress={SendoDesenvolvido}>
+                  <View style={styles.styleCard}>
+                    <Image source={segundaVia} style={styles.imageIcon} />
+                    <View style={styles.ImageOverlay}></View>
+    
+                    <Text style={styles.ImageText}>2ºVia</Text>
+                  </View>
+                </TouchableOpacity>
+  
+                <TouchableOpacity onPress={SendoDesenvolvido}>
+                  <View style={styles.styleCard}>
+                    <Image source={licenciamento} style={styles.imageIcon} />
+                    <View style={styles.ImageOverlay}></View>
+    
+                    <Text style={styles.ImageText}>Licenciamento</Text>
+                  </View>
+                </TouchableOpacity>
+  
+                <TouchableOpacity onPress={SendoDesenvolvido}>
+                  <View style={styles.styleCard}>
+                    <AntDesign
+                      name="idcard"
+                      size={36}
+                      color="white"
+                      style={styles.imageLocationIcon}
+                    />
+                    <View style={styles.ImageOverlay}></View>
+    
+                    <Text style={styles.ImageText}>Consultar CNH</Text>
+                  </View>
+                </TouchableOpacity>
+             </>
+            )}
           </View>
         </ScrollView>
 
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          <View
-            flexDirection={"row"}
-            style={{ paddingVertical: 10, paddingLeft: 16 }}
-          >
-            <TouchableOpacity onPress={SendoDesenvolvido}>
-              <View style={styles.styleCard}>
-                <AntDesign
-                  name="solution1"
-                  size={36}
-                  color="white"
-                  style={styles.imageLocationIcon}
-                />
-                <View style={styles.ImageOverlay}></View>
+        {isShow &&(
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            <View
+              flexDirection={"row"}
+              style={{ paddingVertical: 10, paddingLeft: 16 }}
+            >
+              <TouchableOpacity onPress={SendoDesenvolvido}>
+                <View style={styles.styleCard}>
+                  <AntDesign
+                    name="solution1"
+                    size={36}
+                    color="white"
+                    style={styles.imageLocationIcon}
+                  />
+                  <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>Agendar Atendimento</Text>
-              </View>
-            </TouchableOpacity>
+                  <Text style={styles.ImageText}>Agendar Atendimento</Text>
+                </View>
+              </TouchableOpacity>
 
-            <TouchableOpacity onPress={SendoDesenvolvido}>
-              <View style={styles.styleCard}>
-                <Image source={financeiro} style={styles.imageIcon} />
-                <View style={styles.ImageOverlay}></View>
+              <TouchableOpacity onPress={SendoDesenvolvido}>
+                <View style={styles.styleCard}>
+                  <Image source={financeiro} style={styles.imageIcon} />
+                  <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>Financeiro</Text>
-              </View>
-            </TouchableOpacity>
+                  <Text style={styles.ImageText}>Financeiro</Text>
+                </View>
+              </TouchableOpacity>
 
-            <TouchableOpacity onPress={SendoDesenvolvido}>
-              <View style={styles.styleCard}>
-                <AntDesign
-                  name="contacts"
-                  size={36}
-                  color="white"
-                  style={styles.imageLocationIcon}
-                />
-                <View style={styles.ImageOverlay}></View>
+              <TouchableOpacity onPress={SendoDesenvolvido}>
+                <View style={styles.styleCard}>
+                  <AntDesign
+                    name="contacts"
+                    size={36}
+                    color="white"
+                    style={styles.imageLocationIcon}
+                  />
+                  <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>Contatos</Text>
-              </View>
-            </TouchableOpacity>
+                  <Text style={styles.ImageText}>Contatos</Text>
+                </View>
+              </TouchableOpacity>
 
-            <TouchableOpacity onPress={SendoDesenvolvido}>
-              <View style={styles.styleCard}>
-                <FontAwesome5
-                  name="hands-helping"
-                  size={36}
-                  color="white"
-                  style={styles.imageLocationIcon}
-                />
-                <View style={styles.ImageOverlay}></View>
+              <TouchableOpacity onPress={SendoDesenvolvido}>
+                <View style={styles.styleCard}>
+                  <FontAwesome5
+                    name="hands-helping"
+                    size={36}
+                    color="white"
+                    style={styles.imageLocationIcon}
+                  />
+                  <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>Ajuda</Text>
-              </View>
-            </TouchableOpacity>
+                  <Text style={styles.ImageText}>Ajuda</Text>
+                </View>
+              </TouchableOpacity>
 
-            <TouchableOpacity onPress={SendoDesenvolvido}>
-              <View style={styles.styleCard}>
-                <Image source={reclamações} style={styles.imageIcon} />
-                <View style={styles.ImageOverlay}></View>
+              <TouchableOpacity onPress={SendoDesenvolvido}>
+                <View style={styles.styleCard}>
+                  <Image source={reclamações} style={styles.imageIcon} />
+                  <View style={styles.ImageOverlay}></View>
 
-                <Text style={styles.ImageText}>Reclamações</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
+                  <Text style={styles.ImageText}>Reclamações</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </ScrollView>
+        )}
 
         <View
           style={{
